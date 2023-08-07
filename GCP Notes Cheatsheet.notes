@@ -1,0 +1,233 @@
+Google Cloud offers:
+ - Compute*
+ - Deployment*
+ - Storage*
+ - Machine Learning*
+ - Application Services*
+ - Migration*
+ - Monitoring*
+ - Connection/Networking*
+ - Analytics
+ - IAS/IAM*
+ - API Platform*
+ - Hybrid/Multicloud
+
+Compute:
+ App Engine*			GKE*						Preemtible VMs			Bare Metal
+ Compute Engine*		Blockchain Node Engine		Shilded VMs				Batch
+ Cloud Run*				Cloud Function*				Sole Tenant				VMware engine
+
+Storage/DB: 
+ Cloud Storage*			SQL*						BT*						FireStore*
+ BQ*					MemoryStore*				Spanner*				PersistanceDisk
+ Local SSD				AlloyDB						SQL Insights			DB Migration Services
+ FireBase
+
+Deployment CI/CD:
+ App Engine				GKE							Functions				Run
+ Deployment Manager		Build						Marketspace				Appsheet
+ Composer				Container Registry			Source Repo				Artifact Registry
+ Deployment				TPIs - TerraForm, Jenkins, GitLab, Travis
+
+AI/ML:
+ Cloud Translation		Vision						SST/TTS					Document AI
+ DL Containers/VMs		Vertex AI  					Talent AI 				Natural Language
+ Video Intelligence API Tensorflow					Keras					AI Platform Training/Prediction
+ AutoML					DataFlow/DataPrep			KubeFlow				DialogFlow
+
+Application Services:
+ Application Schedular	Tasks						Eventarc				Pub/Sub
+ Workflows
+
+Migration:
+ BQ DataTransfer		Cloud DataTransfer			Foundation Toolkit		KF
+ MIG For anthos & GKE	MIG for Compute Engine		MIG from amazon redshift and teradata
+ Storage transfer 		Transfer Appliance
+
+Monitoring:
+ Logging				Monitoring					Profiler				Trace
+ Error Reporting		opentelemetry				Prometheous				Grafana
+ Newrelic
+
+Networking/Connection:
+ CDN					DNS 						Armor					Domains
+ IDS					Load Balancers				NAT Gatway				Router
+ VPN					X-Cloud InterConnect		Dedicated InterConnect	Direct Peering
+ Media CDN				Packet Mirroring			VPC						Traffic Director
+
+Analytics:
+ Analytics Hub			BigLake						BigQuery				Composer
+ Data Fusion			Connected Sheets			DataFlow				DataPlex
+ DataPrep				DataProc					DataStream				Pub/Sub
+
+IAM:
+ IAM					Access Context Manager		Access Transparency		Assured Workloads
+ BeyondCorp Ent         Bin Auth                    CA Center               Cloud Asset Inventory
+ Audit Logs             Data Loss Prevention        EKS: External Keys Manager  
+ HSM: HW Secure Module  Identity                    Identity Aware Proxy    KMS: Key Management Serv
+ ETD: Event Threat Detect                           Risk Manager            Resource Manager
+ Security Key Enforcement                           Secret MJanager         Virus Total
+ Web Security Scanner   reCaptcha Enterprise
+
+API Platform:
+ API Analytics          Gateway                     Monetization            APIgee API Platform
+ APIgee Hybrid          APIgee Sense                AppSheet                Endpoints
+ Developer Portal       MarketPlace                 
+
+Hybrid/MultiCloud:
+ Anthos                 Anthos Cluster              Anth Config Management  Anth Service Mesh
+ CR for Anthos          MarketPlace For Anthos      Migrate For anthos      Traffic Director
+
+
+
+
+
+Individuals:
+
+
+    SN GKE:
+        - Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. GKE simplifies the process of running, managing, and scaling containerized applications using Kubernetes, without the need to manage the underlying infrastructure.
+        - It falls under the category of Containerized Orchestration as a Service (CaaS), as it abstracts away the underlying infrastructure and provides a platform for deploying, managing, and scaling containerized applications using Kubernetes.
+        - Advantages: Managed, Horizontal Scalable, Auto Upgrades, Integration With Google Cloud, Secure (RBAC, Network Policies, Encryption), MultiZone and MultiRegion Deployment, Monitoring and Logging, Supports Hybrid and multi cloud deployments, ML/AI Integration.
+        - DisAdvantages: Complex, Costliear than self managed Kubernetes, Limited Customization, Network Latency on on-premesis, Data transfer cost, Performance Variablity (Shared Nature of Resource), initial setup complexity, Resource Management. 
+        - Usecases: Deploying microservices, Running Batch processes (type Job/CronJob Conf defined in yaml file), Hosting Web Apps.
+        - Not Serverless, and Support both applications State Less and Statefull.
+        - Services comes around GKE:
+            - Kubernetes
+            - GCP Services - Storage, Pub/Sub, BigQuery, SQL, Spanner, FireStore, etc.
+            - IAM
+            - Monitor/Log - Stackdriver
+            - LoadBalancer
+            - Networking - VPC, DNS
+            - Build
+            - MarketPlace
+            - Anthos
+            - Istio: Service Mesh
+            - Knative: Deploying and managing serverless workloads
+            - Tekton: CI/CD Pipelines
+            - Package Manage - Helm
+            - GCR Container Registry
+        - Commands:
+            - kubectl:  cluster-info
+                        get pods|deployments|services|nodes|namespaces|events
+                        describe pod <pod-name>
+                        logs <pod-name>
+                        exec -it <pod-name> -- /bin/bash
+                        create deployment <deployment-name> --image=<image-name>
+                        expose deployment <deployment-name> --port=<port-number>
+                        set image deployment/<deployment-name> <container-name>=<new-image>
+                        edit <resource-type> <resource-name>
+                        delete pod <pod-name>
+                        delete deployment <deployment-name>
+                        delete namespace <namespace-name>
+                        scale deployment <deployment-name> --replicas=<desired-replicas>
+                        port-forward <pod-name> <local-port>:<pod-port>
+                        create namespace <namespace-name>
+                        config view
+                        config use-context <context-name>
+                        describe <resource-type> <resource-name>
+        - Similar Services (Diffs): 
+            - Cloud Run: 
+                Google Kubernetes Engine (GKE) is a managed Kubernetes service that provides advanced control for deploying, managing, and scaling complex applications, making it suitable for stateful workloads and intricate microservices architectures. In contrast, Cloud Run offers a fully managed, serverless platform for deploying stateless microservices and APIs, abstracting infrastructure concerns and auto-scaling based on HTTP requests, making it ideal for simpler, event-driven applications with variable traffic patterns.
+            - App Engine: 
+                Google Kubernetes Engine (GKE) is a managed Kubernetes service offering granular control for deploying and scaling containerized applications, suited for complex microservices and stateful workloads. Google App Engine is a fully managed platform-as-a-service (PaaS) that abstracts infrastructure management for simpler deployments, making it ideal for web apps and APIs, but with less customization compared to GKE.
+            - Anthos: 
+                Google Kubernetes Engine (GKE) is a managed Kubernetes service focusing on container orchestration within Google Cloud. Anthos is a platform that extends GKE to manage Kubernetes clusters across multiple clouds and on-premises environments, providing a unified control plane for hybrid and multi-cloud deployments, along with modernization tools for existing applications.
+            - DataProc: 
+                Google Kubernetes Engine (GKE) is a managed Kubernetes service for deploying and scaling containerized applications. It's great for microservices and modern apps. Google Cloud Dataproc is a managed Apache Spark and Hadoop service for big data processing. It's ideal for processing and analyzing large datasets.
+            - Functions:
+                Google Cloud Functions is a serverless compute service that runs your code in response to events. It's great for lightweight, event-driven functions.
+            - Knative:
+                Knative is an open-source platform built on Kubernetes that simplifies deploying and managing serverless workloads. It's designed for event-driven, automatic scaling applications.
+        - Cost Factors:
+            Compute Resources
+            Node Pools
+            Data Egress
+            Storage
+            Number of req/ amount of data transfer
+            Regions and Zones
+            Support Plan
+            - Cost optimize factors:
+                RightSize Node
+                Node AutoScale
+                Node Pools
+                Pod Autoscale
+                Efficient Cluster Setup
+                Resource Req and limits
+                Idle Resources
+                Node Preemptibility: Consider using preemptible VMs for non-critical workloads.
+                Spot Nodes (GKE Autopilot): If using GKE Autopilot, consider using preemptible and spot nodes.
+                Efficient Networking: Optimize networking configurations to minimize unnecessary data transfer.
+                Use GitOps and CI/CD
+                Reserved Instances (GKE Autopilot): For GKE Autopilot, you can reserve a certain number of vCPUs.
+        - Other Features:
+            - node auto-repair and automatic cluster upgrades
+            - Pod Security Policies, Network Policies, and integration with Google Cloud IAM for fine-grained access control.
+            - CRDs
+            - Have the ability to set resource quotas and limits for namespaces or specific workloads to prevent resource overconsumption.
+            - GKE Autopilot: 
+                - Use When Focus is on app development, Event Driven Workloads, Stateless Microservices and workloads.
+            - Third Party Tools: Prometheus for monitoring or Grafana for visualization.
+            - Real World usecases: 
+                - MicroService
+                - Media Straming
+                - Financial Service
+                - Gaming Services
+                - IoT
+                - CMS
+                - Data Analytic/ML
+                - SaaS Softwares
+                - AI Driven Apps
+            - Security
+                node auto-repair and automatic cluster upgrades
+                Private Clusters: No Public IP
+                RBAC
+                Supports Data Encryption
+                Node Identity and Authentication
+                Autopilot clusters: automated security patching, auto-upgrades, and node rotation.
+                Third party integration securely
+
+    SN GCR:
+        - Google Container Registry (GCR) is a managed container image storage service provided by Google Cloud Platform (GCP). It is designed to store, manage, and distribute Docker container images, which are used to package and deploy applications and their dependencies within containers.
+        - Google Container Registry (GCR) is indeed a Platform as a Service (PaaS) offering. It provides a platform for storing, managing, and distributing container images, which are a fundamental part of containerized applications. 
+        - Advantages: Private and secure Repo, GKE integration, Global Distribution, Scalable, Versioning and Tagging, Lifecycle Management, Integration with CI/CD, Docker V2 compatible.
+        - Disadvantages: Limited to google platform, Network Latency, Costs, Complex, Not applicable for on-premises.
+        - Similar Services: 
+            - Docker Hub: Supports public and private both repos. Large Community. Free plans also available.
+            - AWS Elastic CR: Scalable, Secure, pay as you go pricing structure
+            - Azure CR: Geographic Replication, Secure.
+            - Quay: Vulnarability Scanning, image notary, Automates: Build, Scan and Distribution, Flexible and free plan available.
+            - Harbor: OpenSource, Replication, Security Scanning, Policy based image retention. TPIs CaaS.
+            - GitLab CR: Integrated within GitLab's DevOps platform. Simple and CI/CD integration with GitLab.
+            - JFrog Artifactory: Universal Artifact Repository, Secure, Flexible.
+        - When to use: GCP, GKE, Security ang IAM Users and services, Global Distribution, Hybrid and multi-clloud also, It is managed service so no need to spare time for that, Integrates with CI/CD.
+        - Cost Factors: Data Storage, Data Transfer, Distribution, Operations like listing and deleting, Retention policy, Access Control and logging.
+        - Cost Cutting Factors: Implement Retention policy, Regularly review and cleanup images, Use Regional instead of multi-regional if not required, Monitor and analyse data transfer patterns.
+        - Monitoring: 
+            - Cloud Monitor
+            - Cloud Logging
+            - TP Tools: Prometheous, Grafana, Datadog
+            - Custom Script and automation
+            - Lifecycle events
+            - Access and Usage report
+            - Security Scanning and loggs
+            - Cost monitoring
+
+Terms/Tools:
+    
+    Blue Green Deployments:
+        Blue-Green Deployments is a method like having two stages: one active (blue) and one for updates (green). Users switch instantly to the updated stage for testing, and if issues arise, they switch back, ensuring smooth updates without disruptions.
+    GitOps:
+        GitOps tools automate software deployment using version control (like Git). They monitor your code repository for changes and automatically apply them to your infrastructure, ensuring consistency. When you push code, GitOps detects, deploys, and manages updates to your apps and infrastructure, making operations more efficient. Popular tools include ArgoCD, Flux, and Jenkins X. It's like having a helpful robot that keeps your software in sync with your code changes, ensuring everything runs smoothly.
+    Autopilot GKE:
+        GKE Autopilot is like having a car with an expert driver. It manages everything—steering, speed, and even navigation—so you can relax and focus on enjoying the ride. Similarly, Autopilot manages your Kubernetes cluster's operations, scaling, and updates, ensuring your applications run smoothly without needing to worry about underlying details. Just tell it how much "power" (CPU and memory) your apps need, and it handles the rest, making Kubernetes simpler and more hands-off.
+    Helm:
+        Helm is a package manager for Kubernetes that simplifies the deployment and management of applications. It allows you to define, install, and upgrade complex Kubernetes applications using pre-configured packages called "charts."
+    A/B Testing:
+        A/B testing is like trying out two different recipes to see which one tastes better. In software, it's when you show a few people a new version of an app or website to see if they like it more than the old one, and then you decide which version to use based on what people liked.
+    Canary Release:
+        It's when you let a small group of users try out a new version of a program to make sure it works well before sharing it with everyone else. If everything goes well, you slowly let more people use the new version.
+    On-premises:
+        An on-premises environment means that a company sets up and runs its computer systems, like servers and data storage, in its own building or office space instead of using computers from a cloud service. It's like having your own computer room at your workplace where you control everything.
+    Multi-Cloud:
+        Multi-cloud means using more than one cloud service from different companies. It's like having accounts with different phone carriers so you can switch between them depending on where you get the best signal.
