@@ -85,7 +85,7 @@ Hybrid/MultiCloud:
 Individuals:
 
 
-    SN GKE:
+    SN Google Kubernetes Engine:
         - Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. GKE simplifies the process of running, managing, and scaling containerized applications using Kubernetes, without the need to manage the underlying infrastructure.
         - It falls under the category of Containerized Orchestration as a Service (CaaS), as it abstracts away the underlying infrastructure and provides a platform for deploying, managing, and scaling containerized applications using Kubernetes.
         - Advantages: Managed, Horizontal Scalable, Auto Upgrades, Integration With Google Cloud, Secure (RBAC, Network Policies, Encryption), MultiZone and MultiRegion Deployment, Monitoring and Logging, Supports Hybrid and multi cloud deployments, ML/AI Integration.
@@ -188,7 +188,7 @@ Individuals:
                 Third party integration securely
         - Container -> Pod -> Node/Control Planes -> Cluster: This progression represents the hierarchy of these concepts within the context of container orchestration, where containers are the smallest units, grouped into pods, which run on nodes, and nodes are managed within a cluster.
 
-    SN GCR:
+    SN Google Container Registry:
         - Google Container Registry (GCR) is a managed container image storage service provided by Google Cloud Platform (GCP). It is designed to store, manage, and distribute Docker container images, which are used to package and deploy applications and their dependencies within containers.
         - Google Container Registry (GCR) is indeed a Platform as a Service (PaaS) offering. It provides a platform for storing, managing, and distributing container images, which are a fundamental part of containerized applications. 
         - Advantages: Private and secure Repo, GKE integration, Global Distribution, Scalable, Versioning and Tagging, Lifecycle Management, Integration with CI/CD, Docker V2 compatible.
@@ -214,7 +214,7 @@ Individuals:
             - Security Scanning and loggs
             - Cost monitoring
 
-    SN App Engine:
+    SN Google App Engine:
         - Google App Engine is a fully managed Platform as a Service (PaaS) offering from Google Cloud that allows developers to build, deploy, and manage applications without having to manage the underlying infrastructure. App Engine abstracts away much of the operational complexity, allowing developers to focus on writing code and building features.
         - Features: 
             - Managed environment
@@ -307,6 +307,58 @@ Individuals:
                 - The Flexible Environment is designed for applications that require more customization and flexibility. It allows you to run applications in Docker containers and provides more control over the runtime environment.
                 -  It is ideal for applications that have complex dependencies, require custom runtimes, or need to run background tasks. It supports a wider range of runtimes and allows you to install additional software.
                 - Benefits: Custom runtime support, ability to use Docker containers, more control over resources and environment, and compatibility with a broader range of applications.
+
+    SN Google Cloud Run:
+        - Google Cloud Run is a serverless compute platform provided by Google Cloud that allows you to deploy containerized applications without the need to manage the underlying infrastructure.
+        - Cloud Run is categorized as a Platform as a Service (PaaS) offering. It allows developers to focus on writing code without needing to manage the underlying infrastructure, making it a PaaS solution for deploying and running containerized applications.
+        - Google Cloud Run is a managed compute platform that automatically scales your containerized applications. It is designed to abstract away infrastructure management and provide an environment for deploying and running containers. 
+        - Features:
+            - Serverless
+            - Containerization
+            - Auto Scaling
+            - Fully Managed
+            - Event-Driven
+            - Accepts HTTP Request
+            - Pay per use
+            - Handle Multiple Requests concurrently
+            - Deployment Flexible
+            - Regional Deployments
+            - API Auth Support
+        - Disadvantages:
+            - Stateless Limitations (Not suitable for stateful apps)
+            - Cold Starts
+            - Default Execution time limit is 15 mins
+            - Limited BG process
+            - Max Container size 2GB
+            - Networking Limitations
+            - Not advance customization
+        - Usecases:
+            - WebApps
+            - BE for Mobile Apps
+            - Microservices
+            - Batch processing
+            - API Proxies and Gateways
+            - Stateless apps
+            - Serverless containers
+            - Event Driven workloads
+            - Small to medium workloads
+        - There is not a way you can deploy app without containerized app
+        - Cost Factors: 
+            - Memory 
+            - CPU
+            - Request Count
+            - Networking
+            - concurrent Request
+            - Storage
+            - Region
+            - Auto Scale
+            - Cost Cutting Factors:
+                - use Caching
+                - Efficient code
+                - Use Schedular
+                - Gtracefull shutdown when instance no longer needed
+                
+
 
 Terms/Tools:
     
