@@ -358,7 +358,48 @@ Individuals:
                 - Use Schedular
                 - Gtracefull shutdown when instance no longer needed
                 
-
+    SN Compute Engine:
+        - Google Compute Engine is an Infrastructure as a Service (IaaS) offering from Google Cloud that provides virtual machines (VMs) for running a wide range of workloads, from simple web applications to complex, high-performance computing tasks. 
+        - Features:
+            - Fully Customization
+            - Full control on developers
+            - Supports Auto Scalling
+            - PersistanceDisk
+            - You can configure firewalls and network policy
+            - Global reach
+            - preemptible Instances
+            - Image management
+            - snapshot management
+            - backups
+            - Multizone availability
+        - Disadvantages: 
+            - Management
+            - Manual Scalling
+            - Cost Complexity
+            - Infra management
+            - Limited Serverless Capabilities
+            - Learning Curve
+        - Use Cases:
+            - Every Other Application which comtains more manual work and customization can be deployed here.
+        - cost Factors:
+            - Instance Types
+            - Usage
+            - Regions
+            - PersistanceDisk
+            - Egress outgress
+            - Regional and zonal Resources
+            - Load balancing
+            - Operations and api calls
+            - Backup and disaster recovery
+        - Where not to use COmpute Engine: 
+            - Complexity: Some applications are simple and lightweight, requiring minimal resources and management. Using Compute Engine for such applications might introduce unnecessary complexity and overhead.
+            - Resource Requirements: Compute Engine allows fine-grained customization of resources, which is beneficial for applications with specific resource demands. However, for applications with modest resource requirements, using a more managed service could be more efficient.
+            - Cost Efficiency: Compute Engine provides control over costs by allowing you to choose instance types and configurations. However, for cost-sensitive applications with variable workloads, serverless or managed services might offer better cost efficiency.
+            - Developer Focus: If your primary focus is developing and deploying code without managing infrastructure, other Google Cloud services like App Engine or Cloud Run provide a more streamlined experience.
+            - Scaling and Load Balancing: While Compute Engine allows manual scaling and load balancing, other services like Google Kubernetes Engine or Cloud Run offer built-in auto-scaling and load balancing features.
+            - Maintenance Overhead: Compute Engine instances require more management and maintenance compared to fully managed services. For applications where minimizing operational overhead is a priority, other options might be more suitable.
+            - Microservices and Containers: If your application is designed using microservices architecture and containers, Google Kubernetes Engine might offer better container orchestration and management capabilities.
+            - Specialized Use Cases: Certain applications might have specific requirements, such as real-time data processing, machine learning inference, or IoT data streaming, which could be better served by specialized services.
 
 Terms/Tools:
     
