@@ -391,7 +391,7 @@ Individuals:
             - Load balancing
             - Operations and api calls
             - Backup and disaster recovery
-        - Where not to use COmpute Engine: 
+        - Where not to use Compute Engine: 
             - Complexity: Some applications are simple and lightweight, requiring minimal resources and management. Using Compute Engine for such applications might introduce unnecessary complexity and overhead.
             - Resource Requirements: Compute Engine allows fine-grained customization of resources, which is beneficial for applications with specific resource demands. However, for applications with modest resource requirements, using a more managed service could be more efficient.
             - Cost Efficiency: Compute Engine provides control over costs by allowing you to choose instance types and configurations. However, for cost-sensitive applications with variable workloads, serverless or managed services might offer better cost efficiency.
@@ -400,6 +400,41 @@ Individuals:
             - Maintenance Overhead: Compute Engine instances require more management and maintenance compared to fully managed services. For applications where minimizing operational overhead is a priority, other options might be more suitable.
             - Microservices and Containers: If your application is designed using microservices architecture and containers, Google Kubernetes Engine might offer better container orchestration and management capabilities.
             - Specialized Use Cases: Certain applications might have specific requirements, such as real-time data processing, machine learning inference, or IoT data streaming, which could be better served by specialized services.
+
+    SN Cloud Functions: 
+        - Cloud Functions is categorized as a Function as a Service (FaaS), which is a subset of Platform as a Service (PaaS). In the FaaS model, developers write functions that respond to specific events, and the cloud provider takes care of scaling and managing the infrastructure needed to execute those functions.
+        - Cloud Functions is a serverless compute service provided by Google Cloud Platform (GCP) that allows you to write and deploy event-driven functions in various programming languages. It enables you to execute code in response to events without provisioning or managing servers, making it ideal for lightweight, event-driven applications and automations.
+        - Advantages: 
+            - Serverless
+            - event driven
+            - Scalable
+            - cost effective
+            - Quick Deployment
+        - Languages Support:
+            - .NET
+            - Java 
+            - Ruby 
+            - Node.js 
+            - Python 
+            - Go
+        - DisAdvantages: 
+            - 9 Minutes Execution time by Default
+            - Stateless
+            - Limited Resouce control
+        - Usecases: 
+            - Alerts and notifications
+            - automation
+            - image and Video processing
+            - webhooks
+        - Cost Factors:
+            - Execution time
+            - requests
+            - Usage
+            - Cost Cutting Factors:
+                - Optimize code
+                - minimize dependancy
+                - optimize triggers
+                
 
 Terms/Tools:
     
