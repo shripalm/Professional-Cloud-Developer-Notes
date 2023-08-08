@@ -186,6 +186,7 @@ Individuals:
                 Node Identity and Authentication
                 Autopilot clusters: automated security patching, auto-upgrades, and node rotation.
                 Third party integration securely
+        - Container -> Pod -> Node/Control Planes -> Cluster: This progression represents the hierarchy of these concepts within the context of container orchestration, where containers are the smallest units, grouped into pods, which run on nodes, and nodes are managed within a cluster.
 
     SN GCR:
         - Google Container Registry (GCR) is a managed container image storage service provided by Google Cloud Platform (GCP). It is designed to store, manage, and distribute Docker container images, which are used to package and deploy applications and their dependencies within containers.
@@ -213,6 +214,100 @@ Individuals:
             - Security Scanning and loggs
             - Cost monitoring
 
+    SN App Engine:
+        - Google App Engine is a fully managed Platform as a Service (PaaS) offering from Google Cloud that allows developers to build, deploy, and manage applications without having to manage the underlying infrastructure. App Engine abstracts away much of the operational complexity, allowing developers to focus on writing code and building features.
+        - Features: 
+            - Managed environment
+            - Supports so Many Languages
+            - Auto scale
+            - Offers Managed Data Storage
+            - App Versoining, and traffic splitting
+            - MicroService architectures
+            - Version Management and rollback
+            - Built in services like authentication and security
+            - Single Command Deployment
+            - Built in Monitoring logging and diagnosis
+            - Cost Management
+        - Use Cases:
+            - Web Services
+            - Microservices
+            - Scalable Application
+        - Disadvantages:
+            - Supports Many but limited Languages
+            - limited customization
+            - Cold Start
+            - Cost Complexity
+            - Resource Limits
+            - Network limits
+            - Limited Local Testing
+            - StateLess Nature
+            - Versioning Complexity
+        - Deploying Container in app engine: 
+            - Create Docker Image
+            - Create app.yaml Configuration
+            - Deploy it to app engine with gcloud command utility
+            - Scale and Manage
+        - How to Decide where to use which to deploy containerized application among GAE, GCR and GKE:
+            - GAE: 
+                - Simple and Rapid Development
+                - Auto Scaling
+                - StateLess Applications
+                - Limited Customization
+            - GCR
+                - Stateless
+                - Flexible Runtimes: supports any language
+                - event driven workloads
+                - variable workloads
+                - if container already exists
+            - GKE: 
+                - Complex and customised deployments
+                - Container Orchestration
+                - Stateful Apps
+                - Container Expertise
+                - Hybrid and multi cloud deployments
+        - Commands (gcloud app):
+            - Deploy and Manage Apps: 
+                - deploy | browse
+                - versions: list | describe | delete
+            - Scale and Configure: 
+                - versions: update | migrate
+                - services: list | delete | update
+            - Logging and Monitoring: 
+                - logs tail | browse logs | operations list
+            - Cron Jobs and task queues: 
+                - cron jobs list | task queues list
+            - Custom Runtimes: 
+                - deploy --image-url
+                - browse --version
+            - Traffic Splitting and Migrations: 
+                - services: split-traffic | migrate
+            - Certificates and domains: 
+                - domain-mappings: list | create
+                - ssl-certificates: list | create
+        - Cost Factors:
+            - Runtime
+            - Storage
+            - Network Egress
+            - App engine features
+            - App Versioning and Split Traffic
+            - Cost Cutting Factors: 
+                - Right Size Instance
+                - Auto Scaling
+                - Optimise Request
+                - Data store and database optimisation
+                - Review monitor and logging
+                - App Version Cleanup
+                - Set Quotas and limits
+        - Types:
+            - Standard:
+                - fully managed platform optimized for building and deploying lightweight, stateless applications. It provides automatic scaling, load balancing, and a curated set of runtimes for popular programming languages.
+                -  It is suitable for web applications, APIs, and microservices that have relatively predictable traffic patterns and can run within the constraints of the supported runtimes.
+                - Benefits: Automatic scaling, low-latency requests, easy deployment, and optimized performance for applications with modest resource requirements.
+            - Flexible:
+                - The Flexible Environment is designed for applications that require more customization and flexibility. It allows you to run applications in Docker containers and provides more control over the runtime environment.
+                -  It is ideal for applications that have complex dependencies, require custom runtimes, or need to run background tasks. It supports a wider range of runtimes and allows you to install additional software.
+                - Benefits: Custom runtime support, ability to use Docker containers, more control over resources and environment, and compatibility with a broader range of applications.
+
 Terms/Tools:
     
     Blue Green Deployments:
@@ -225,9 +320,16 @@ Terms/Tools:
         Helm is a package manager for Kubernetes that simplifies the deployment and management of applications. It allows you to define, install, and upgrade complex Kubernetes applications using pre-configured packages called "charts."
     A/B Testing:
         A/B testing is like trying out two different recipes to see which one tastes better. In software, it's when you show a few people a new version of an app or website to see if they like it more than the old one, and then you decide which version to use based on what people liked.
-    Canary Release:
+    Canary Release: 
         It's when you let a small group of users try out a new version of a program to make sure it works well before sharing it with everyone else. If everything goes well, you slowly let more people use the new version.
     On-premises:
         An on-premises environment means that a company sets up and runs its computer systems, like servers and data storage, in its own building or office space instead of using computers from a cloud service. It's like having your own computer room at your workplace where you control everything.
     Multi-Cloud:
         Multi-cloud means using more than one cloud service from different companies. It's like having accounts with different phone carriers so you can switch between them depending on where you get the best signal.
+    Cold Starts:
+        A "cold start" refers to the delayed initialization of a software application or server instance that occurs when it's activated after being idle. During a cold start, resources are provisioned, dependencies loaded, and startup processes executed, leading to slower response times for initial requests. Cloud providers use strategies to minimize cold start impact, but it can affect user experience, especially for applications with low latency needs. Optimal architecture and resource management are important to mitigate cold start delays.
+    Topmost layer in a container:
+        The topmost layer of a container image represents the final state of the filesystem, including the application code and runtime environment, and is the starting point for running a container.
+    Control Planes:
+        Controller of cluster.
+
