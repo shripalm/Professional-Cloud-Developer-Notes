@@ -1,0 +1,35 @@
+Control: 
+
+    Bare Metal Instances: Bare Metal instances offer the highest level of control over physical hardware. You have direct access to the bare metal server, including the ability to manage BIOS settings, install custom operating systems, and configure hardware components. This level of control is suitable for workloads that require fine-tuned hardware configurations and direct hardware access.
+
+    Sole Tenant Nodes: Sole Tenant Nodes provide control through virtualization. While you do not have the same level of direct hardware control as with Bare Metal instances, you still have exclusive use of the physical machine. You can run your VM instances on dedicated hardware, ensuring better isolation and performance compared to shared environments. While you don't have direct access to the underlying hardware, you have control over the VM instances and their configurations.
+
+Virtualization:
+
+    Bare Metal: Bare Metal instances run directly on physical servers without any virtualization layer. This provides the highest level of performance but requires more manual management.
+
+    Sole Tenant Nodes: Sole Tenant Nodes use virtualization technology to allocate dedicated resources to VM instances. This abstraction layer offers more flexibility in terms of resource allocation and management.
+
+Isolation:
+
+    Bare Metal: Bare Metal instances provide strong isolation between instances since they run directly on physical hardware. Each instance is completely independent.
+    
+    Sole Tenant Nodes: Sole Tenant Nodes also offer isolation, but it's achieved through virtualization. VM instances running on the same hardware share resources but are logically isolated.
+
+Customization:
+
+    Bare Metal: Bare Metal instances allow for extensive customization of hardware components, operating systems, and software configurations.
+    
+    Sole Tenant Nodes: Sole Tenant Nodes offer customization within the scope of virtual machines. You can customize VM instances but not the underlying physical hardware.
+
+Use Cases:
+
+    Bare Metal: Bare Metal is suitable for workloads that require maximum performance, specialized hardware configurations, and direct access to physical resources. It's ideal for applications with stringent performance requirements.
+    
+    Sole Tenant Nodes: Sole Tenant Nodes are well-suited for workloads that require dedicated virtualized resources, such as applications with licensing constraints, data isolation needs, or regulatory compliance requirements.
+
+Management Complexity:
+
+    Bare Metal: Bare Metal instances require more manual management and monitoring of the underlying hardware.
+    
+    Sole Tenant Nodes: Sole Tenant Nodes provide a higher level of abstraction and managed services, reducing some of the management complexities associated with Bare Metal.

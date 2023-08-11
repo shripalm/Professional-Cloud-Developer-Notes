@@ -434,10 +434,134 @@ Individuals:
                 - Optimize code
                 - minimize dependancy
                 - optimize triggers
-                
+
+    SN Blockchain Node Engine:
+        - It's a fully managed node-hosting service offered by Google Cloud, designed to simplify the deployment and management of blockchain nodes for companies.
+        - Blockchain Node Engine is a managed node-hosting service that enables companies to relay transactions, deploy smart contracts, and interact with blockchain data on Google Cloud's reliable and secure infrastructure.
+        - It addresses the challenges of deploying and managing self-hosted nodes by providing the configurability of self-managed nodes without the operational overhead.
+        - Blockchains consist of transaction data stored in decentralized databases. Nodes maintain copies of the blockchain's transaction history and form a peer-to-peer network to ensure synchronization.
+        - Advantages:
+            - Streamlined Provisioning: Blockchain Node Engine simplifies node deployment, allowing developers to provision new nodes quickly with specified regions and networks (Mainnet, Testnet) without the need for manual synchronization.
+            - Fully Managed Operations: The service offers fully managed operations, reducing the need for a dedicated DevOps team. Google Cloud actively monitors nodes, handles restarts during outages, and provides a service level agreement (SLA) for availability.
+            - Dedicated Nodes
+            - Enterprise-Grade infra for WEB-3
+        - Applications:
+            - Ingesting blockchain data
+            - Fast, reliable, and private transactions
+            - Smart contract and dApp development
+        - Two types of node
+            - full node: Best for building dApps or reading real-time data
+            - archive node: Best for reading full historical data
+        - PaaS Offering
+        - Supported Blockchain: Ethereum is the first blockchain supported by Blockchain Node Engine, enabling developers to provision fully managed Ethereum nodes for secure blockchain access.
+        - Blockchain Node Engine aims to empower developers building products on blockchain-based platforms by providing reliable, performant, and secure infrastructure for managing blockchain nodes.
+
+    SN Preemtible VMs:
+        - Preemptible VMs are a type of virtual machine instance offered by Google Cloud Platform (GCP) that come with a significant cost reduction in exchange for being short-lived and non-guaranteed. These instances are suitable for workloads that can handle interruptions and can be terminated after 24 hours, offering a cost-effective solution for various use cases.
+        - Benefits: Cost Savings, Scalable, Batch Processing, Useful for testing environment
+        - Use Cases: Data Processing, Content Delivery, CI/CD pipelines, Rendering and Simulation
+        - It classifies as IaaS.
+        - Similar Service: Spot Instances on AWS
+        - Where to Use:
+            Batch processing, parallel computing, and distributed workloads.
+            Cost-effective solutions for temporary, non-critical tasks.
+            Workloads that can tolerate interruptions and are fault-tolerant.
+        - Where Not to Use:
+            Mission-critical applications or workloads requiring constant uptime.
+            Long-running, stateful applications that cannot handle interruptions.
+            Workloads that require guaranteed resources and performance.
+        - It's important to consider the specific requirements of your application and workload before utilizing Preemptible VMs, as they may not be suitable for all scenarios due to their inherent limitations.
+
+    SN Shielded VMs:
+        - Shielded VMs are a security feature in Google Cloud Platform (GCP) that provide enhanced protection against malicious activities and advanced threats. They are designed to safeguard the integrity and confidentiality of virtual machines by ensuring their boot process, firmware, and runtime environment are secure and tamper-resistant.
+        - Benefits: Improved Security, Secure Boot, UEFI Firmware, Integrity Monitoring
+        - Use Cases: Sensitive Workloads, Regulated Industries, Multi-Tenancy
+        - IaaS
+        - Disadvantages: Complexity, Resource Overhead
+        - Similar Services: VM Shielding on Azure
+        - Where to Use:
+            Workloads with strict security and compliance requirements.
+            Critical applications and data that require strong protection against advanced threats.
+            Multi-tenant environments to ensure isolation and security among different users.
+        - Where Not to Use:
+            Workloads with minimal security requirements that do not handle sensitive data.
+            Situations where the overhead of security measures may impact performance.
+        - Note: While Shielded VMs provide enhanced security, they may come with additional complexity and resource overhead. It's important to assess the security needs of your workload and weigh the benefits against any potential drawbacks before implementing Shielded VMs.
+
+    SN Sole Tenant:
+        - Sole Tenant Nodes are a feature in Google Cloud Platform (GCP) that allows you to have exclusive use of a physical machine, providing more control, isolation, and performance for your workloads. With Sole Tenant Nodes, you can run your VM instances on dedicated hardware, which can be particularly advantageous for specific use cases.
+
+        - Benefits: Resource Allocation, Isolation and Security, Licensing Flexibility, Compliance Requirements 
+        - Use Cases: Licensing Optimization, Performance-Critical Workloads, Data Isolation
+        - IaaS 
+        - Disadvantages: Higher Costs, Resource Management
+        - Deployment Options: Regional, Zonal, Multi-Zonal
+        - Where to Use:
+            Workloads that require dedicated hardware for compliance, licensing, or performance reasons.
+            Applications with stringent data isolation requirements.
+            Mission-critical workloads that need consistent and predictable performance.
+        - Where Not to Use:
+            Cost-sensitive workloads that can tolerate shared resources.
+            Applications that do not require dedicated hardware or stringent isolation.
+        - Note: While Sole Tenant Nodes provide benefits in terms of isolation and control, they come with higher costs and additional management overhead. It's important to evaluate the specific needs of your workload before deciding to use Sole Tenant Nodes.
+
+    SN Bare Metal:
+        - Bare Metal is a specialized offering in Google Cloud Platform (GCP) that provides direct access to physical hardware, allowing you to run workloads on dedicated servers without the virtualization layer. With Bare Metal, you have complete control over the hardware, making it suitable for specific use cases that require high performance, isolation, and customization.
+        - Benefits: Performance, Isolation, Customization, Flexible
+        - UseCases: Highperformance workloads, Specialized Workloads, Security and Compliance
+        - IaaS
+        - DisAdvantages: Cost, Resource Management Manpower
+        - Regional and Zonal only
+        - Where to Use:
+            Workloads that demand the highest level of performance and customization.
+            Applications with strict security and compliance requirements.
+            Environments requiring custom software installations or specialized configurations.
+        - Where Not to Use:
+            Budget-sensitive workloads that can work well with virtualized instances.
+            Applications that don't require the level of control and performance offered by Bare Metal.
+        - Note: Bare Metal instances offer unparalleled performance and control but come with higher costs and increased management complexity. Evaluate the specific needs of your workload before opting for Bare Metal to ensure the benefits align with your requirements.
+
+    SN Batch:
+        - Batch service in Google Cloud Platform (GCP) provides a managed solution for running batch processing workloads at scale. It allows you to execute large-scale computing tasks, data processing, and batch jobs without the need to manage the underlying infrastructure. Batch service helps optimize resource utilization, manage job dependencies, and handle job failures.
+        - advantages: Managed Infra, Scalable, Supports internal job dependencies, auto retries failed jobs.
+        - Use Case: data, media, image processing, scientific computing
+        - PaaS
+        - Disadvantages: 
+            Limited Application Types: Batch service is best suited for data-centric, parallelizable workloads. It may not be suitable for interactive or real-time applications.
+            Complex
+            Lurning Curve
+        - Similar service is AWS Batch
+        - Regional and Multi Regional
+        - Where to use:
+            Tasks require scalable resources
+            Large-scale batch jobs with dependencies and job scheduling.
+            Media processing, image transcoding, and content transformation.
+        - Where not to use:
+            Real-time or interactive applications that require immediate response.
+            Workloads with unpredictable and sporadic resource demands.
+            Applications that do not fit the batch processing paradigm.
+    
+    SN VMware Engine:
+        - VMware Engine is a cloud service in Google Cloud Platform (GCP) that allows you to run VMware-based workloads natively in the cloud, while maintaining compatibility with your existing VMware environment. It provides a fully managed and scalable solution for running VMware virtual machines (VMs) without the need to manage the underlying infrastructure.
+        - Benefits: Seamless Migration, Compatibility, Managed Infrastructure, Scalability
+        - Use Cases: Data center Extension, App modernization, Development and testing environments
+        - IaaS
+        - DisAdvantages: Cost Consideration, Limited to VMware Workloads
+        - Similar Services: Azure VMware Solution (Microsoft Azure):
+        - Regional and Zonal
+        - Where to Use:
+            Migrating and extending VMware workloads to the cloud.
+            Maintaining VMware compatibility while benefiting from cloud resources.
+            Running applications in a familiar VMware environment.
+        - Where Not to Use:
+            Greenfield projects that do not have existing VMware dependencies.
+            Workloads that require fully serverless or container-based architectures.
+
 
 Terms/Tools:
     
+    VMware-based workloads:
+        Refer to software applications and services that are running on virtual machines (VMs) created and managed using VMware technology. These workloads utilize VMware's virtualization technology to create multiple isolated and independent virtual environments on a single physical server. This allows organizations to run multiple applications and operating systems on the same hardware, improving resource utilization and flexibility. VMware-based workloads can include various types of software, such as databases, web servers, applications, and more, all running within virtual machines created and managed by VMware tools and software.
     Blue Green Deployments:
         Blue-Green Deployments is a method like having two stages: one active (blue) and one for updates (green). Users switch instantly to the updated stage for testing, and if issues arise, they switch back, ensuring smooth updates without disruptions.
     GitOps:
