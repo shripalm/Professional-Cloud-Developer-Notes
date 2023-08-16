@@ -31,7 +31,7 @@ Deployment CI/CD:
  Deployment				TPIs - TerraForm, Jenkins, GitLab, Travis
 
 AI/ML:
- Cloud Translation		Vision						SST/TTS					Document AI
+ Cloud Translation		Vision						STT/TTS					Document AI
  DL Containers/VMs		Vertex AI  					Talent AI 				Natural Language
  Video Intelligence API Tensorflow					Keras					AI Platform Training/Prediction
  AutoML					DataFlow/DataPrep			KubeFlow				DialogFlow
@@ -639,6 +639,77 @@ Individuals:
         - Cost Cutting: Optimize costs by choosing appropriate node sizes based on workload requirements, managing data storage efficiently, and optimizing data modeling.
         - Where to Use and Where Not to Use: Use Cloud Bigtable for applications that require real-time, high-throughput, and low-latency access to large datasets. It might not be suitable for applications that require complex ad-hoc querying or transactional consistency.
         - Deployment Options: Regional
+
+    SN FireStore:
+        - Firestore is a fully managed, NoSQL document database service provided by Google Cloud Platform (GCP). It is designed to store, synchronize, and query data for web, mobile, and server applications. Firestore offers real-time data synchronization, automatic scaling, and a flexible data model.
+        - Advantages: RealTime synchronization, Scalable, Secure, Offline Support
+        - Dis: Expensive, Complex Query
+        - UseCase: Firestore is suitable for applications that require real-time data synchronization, collaboration, and responsive user experiences across various devices.
+        - RL Usecases: Mobile Apps, ECommerce, IOT, Gaming
+        - Similar Service is Firestore is similar in concept to Firebase Realtime Database
+        - Classification DBaaS
+        - Cost Factors: Cost factors include data storage, data transfer, and document operations (reads, writes, deletes).
+        - Cost Cutting: Optimize costs by efficiently structuring and organizing data, using Firestore's security rules to control access, and minimizing data transfer.
+        - Where to Use and Where Not to Use: Use Firestore for applications requiring real-time synchronization, collaborative features, and responsive user experiences. It may not be suitable for applications that require complex querying beyond its capabilities.
+        - Deployment options: It is Fully managedd service.
+
+    SN FireBase: 
+        - Firebase is a comprehensive platform provided by Google that offers a wide range of tools and services for building web and mobile applications. Firebase includes features for development, hosting, authentication, real-time databases, cloud functions, analytics, and more.
+        - Advantaged: RealTIme DB, Authentication, Firebase Hosting, Notification, ML
+        - Dis: Vendor Locking, complex
+        - Use Cases: Firebase is suitable for developers building web and mobile applications who want an integrated platform for quickly developing and deploying features.
+        - RL Usecases: MObile/Web Apps, IA, Real TIme Features, Analytics and Insights
+        - Classification: 
+            Firebase provides a collection of cloud services and tools, ranging from infrastructure services (hosting, databases) to application services (authentication, analytics, etc.).
+        - Cost Factors: Cost factors depend on the specific Firebase services used, including storage, data transfer, usage of Cloud Functions, and other premium features.
+        - Cost cutting factors: Optimize costs by managing resource usage efficiently, considering the free tier limits, and scaling services as needed based on user demand.
+        - Where to Use and Where Not to Use: Firebase is well-suited for small to medium-sized applications, startups, and projects where rapid development and deployment are priorities. For larger applications with more complex requirements, it's important to assess whether Firebase's integrated approach aligns with your application's needs.
+        - Deployment options: Firebase services are hosted and managed by Google, providing a fully managed environment for your applications.
+        - Services: 
+            Authentication: Provides built-in authentication services, allowing users to sign in using email/password, social media accounts (Google, Facebook, Twitter), phone numbers, and more.
+            Realtime Database: A NoSQL cloud-hosted database that allows developers to store and synchronize data in real time across connected clients.
+            Cloud Firestore: A more advanced NoSQL document database that provides real-time data synchronization and more complex querying capabilities.
+            Cloud Functions: Allows you to run serverless functions in response to Firebase events or HTTPS requests.
+            Hosting: Provides fast and secure hosting for web applications, enabling you to deploy web content quickly.
+            Cloud Storage for Firebase: Allows you to store user-generated content, such as images and videos, in the cloud.
+            Cloud Messaging (FCM): Enables push notifications and in-app messaging to engage users.
+            Remote Config: Lets you customize the behavior and appearance of your app without publishing an app update.
+            Dynamic Links: Provides deep linking capabilities that allow you to send users to specific locations within your app or to install your app if not already installed.
+            Performance Monitoring: Helps you monitor and optimize your app's performance by tracking key performance indicators.
+            Test Lab: Provides a cloud-based infrastructure for testing your app on real devices to ensure its functionality and compatibility.
+            Crashlytics: Offers crash reporting and analysis to help you identify and fix app crashes quickly.
+            App Distribution: Facilitates the distribution of pre-release app versions to testers and stakeholders.
+            In-App Messaging: Allows you to send targeted and contextual messages to users while they're using your app.
+            Predictions: Provides machine learning capabilities to help you predict user behavior and create personalized user experiences.
+            ML Kit: Offers a set of machine learning APIs for adding features like image recognition, text detection, and language translation to your app.
+            App Check: Protects your app and its backend resources by ensuring only authenticated and authorized instances can access them.
+
+    SN Persistent Disk: 
+        - Persistent Disk is a block storage service provided by Google Cloud Platform (GCP) that allows you to create and attach durable storage volumes to virtual machine instances. It provides reliable and scalable storage solutions for your compute workloads in the cloud.
+        - Advantage: Durable, Flexible, SnapShots, Encryption, Scalable.
+        - Dis: Regionally bound
+        - Usecase: Persistent Disk is suitable for a wide range of applications and use cases that require reliable and scalable block storage for virtual machine instances.
+        - RL Usecases: Database Storage, File Storage, Application Data. Backup and Disaster Recovery, Scalable
+        - Similar serviec EBS, Elastic Block Store
+        - Service Classification: IaaS
+        - Cost Factors: storage capacity, type of disk, data transfer, and snapshots.
+        - Cost Cutting Factors: Optimize costs by choosing appropriate disk types based on performance needs, using snapshots efficiently for backup, and managing data transfer carefully.
+        - Where to Use and Where Not to Use: Use Persistent Disk when you need reliable, scalable, and persistent block storage for your virtual machine instances. It may not be suitable for scenarios that require fully distributed storage or highly specialized storage solutions.
+        - Deployment Options: Specific Zone with in particular region.
+
+    SN Data Proc: 
+        - Dataproc is a managed big data processing service provided by Google Cloud Platform (GCP). It allows you to create and manage Apache Spark and Apache Hadoop clusters for processing large datasets using distributed computing techniques.
+        - Advantages: Scalable, MAnaged, Compatible, Cost efficiency
+        - Dis: Complex. Maintanance overhead
+        - Use cases: Dataproc is suitable for processing and analyzing large datasets using distributed computing frameworks like Spark and Hadoop.
+        - RL Usecases: Data Analytics, ML, Log Analysis, ETL.
+        - Related Services: AWS Elastic Map reduce
+        - Classification: PaaS
+        - Costing: Cost factors include the number and types of virtual machines in the cluster, as well as data transfer and storage costs.
+        - Cost Cutting: Optimize costs by right-sizing clusters based on workload requirements, using preemptible instances for non-critical workloads, and optimizing data processing jobs.
+        - Where to Use and Where Not to Use: Use Dataproc when you need to process and analyze large datasets using distributed computing frameworks. It might not be suitable for smaller datasets or workloads that can be efficiently processed using single-node solutions.
+        - Deployment Options: Dataproc allows you to create clusters in specific zones, and you can choose the zone based on latency and data residency requirements.
+
 
 
 
