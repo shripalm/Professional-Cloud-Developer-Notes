@@ -21,7 +21,8 @@ Storage/DB:
  Cloud Storage*			SQL*						BT*						FireStore*
  BQ*					MemoryStore*				Spanner*				PersistanceDisk
  Local SSD				AlloyDB						SQL Insights			DB Migration Services
- FireBase
+ FireBase               Cloud Storage for FireBase  Storage Transfer        Data store
+ Dataproc               Dataflow                    Firebase Realtime Database
 
 Deployment CI/CD:
  App Engine				GKE							Functions				Run
@@ -557,9 +558,98 @@ Individuals:
             Greenfield projects that do not have existing VMware dependencies.
             Workloads that require fully serverless or container-based architectures.
 
+    SN Cloud Storage:
+        - Cloud Storage is an object storage service provided by Google Cloud Platform (GCP). It allows you to store and retrieve a wide range of data, such as documents, images, videos, backups, and application data. Objects in Cloud Storage are stored in a flat namespace, organized into buckets.
+        - Advantages: Scalable, Durable, Globlly Accessible, Secure, cost effective
+        - Dis: Performance, Complex Quering
+        - Usecases: Web Content, Backups, archives, multimedia content
+        - types (Storage Class): 
+            Standard - High Cost - Hot
+            Nearline -           - One per month
+            ColdLine -           - once 90 day
+            Archive  - Low Cost  - Once a year
+        - RL UseCases: Webhosting, backup and recovery, media storage and distribution, data archivening, colab work
+        - Similar Service: S3
+        - Classification: IaaS
+        - Costing: Storage, bandwidth, Frequency, Storage Class
+        - Cost Cutting: Setting lifecycle policies for moving and deleting not needed files.
+        - Deployment options: R, MR, Z, MZ
+
+    SN Cloud SQL:
+        - Cloud SQL is a fully managed relational database service provided by Google Cloud Platform (GCP). It offers a managed environment for popular relational database management systems (RDBMS) such as MySQL, PostgreSQL, and SQL Server. Cloud SQL automates database maintenance tasks and provides high availability, scalability, and security for your databases.
+        - Advantages: Managed, Availability, Scalable, Compatible, Secure
+        - Dis: Limited customization, Limited scaling
+        - Use Cases: Cloud SQL is well-suited for applications that require a traditional relational database, but benefit from managed services to reduce operational overhead.
+        - RL Usecases: Web Apps, MicroService, Analytic and Reporting, SaaS, Development and Testing
+        - Similar Services: AWS RDS
+        - Classification: DBaaS
+        - Costing: Instance type, Storage Size, Bandwidth, backup sizes
+        - Cost Cutting: Choose right typed instance, set policies and auto backup wisely
+        - Where to Use and Where Not to Use: Use Cloud SQL when you need a fully managed relational database without the complexity of manual maintenance. However, it may not be suitable for extremely high-performance, large-scale, or specialized databases.
+        - Deployment Options: Regional
+
+    SN Cloud Spanner: 
+        - Cloud Spanner is a globally distributed, horizontally scalable, and strongly consistent relational database service provided by Google Cloud Platform (GCP). It combines the benefits of traditional relational databases with the scalability and availability of NoSQL databases.
+        - Advantages: Global Distribution, Horizontal Scaling, consistency, ANSI SQL Compatibility, High Availability
+        -DisAdvantages: Complex, Learning Curve, Cost
+        - UseCases: Cloud Spanner is ideal for applications that require a globally distributed, highly available, and strongly consistent database with support for complex queries.
+        - RL UseCases: Financial Services, Gaming, E Commerce, IoT
+        - Similar Services: Amazon Aurora Global Database
+        - Service Classification: DBaaS
+        - Costing: Size, Storage Usage, Data Transfer, node Numbers
+        - Cost Cutting: Optimize costs by using instance sizes that match your workload, managing data storage effectively, and optimizing queries for efficient resource usage.
+        - Where to Use and Where Not to Use: Use Cloud Spanner for global applications that require strong consistency and low-latency access to data across regions. It might not be suitable for simple, low-traffic applications due to its complexity and potential cost.
+        - Deployment: MR
+
+    SR Cloud MemoryStore: 
+        - Cloud Memorystore is a managed in-memory data store service provided by Google Cloud Platform (GCP). It is built on the popular open-source Redis cache, offering a fully managed environment for hosting Redis instances. Cloud Memorystore provides high-performance data caching and storage capabilities.
+        - Advantages: Managed Redis, In Memory Speed, High Availability, Data Persistance for recovery, Compatibility
+        - Dis: Limited for in memory data, Expensive
+        - Usecases: Cloud Memorystore is suitable for applications that require fast data caching, session storage, and real-time data processing.
+        - RL UseCases: Caching, Session Storage, Real Time Analytics, Leaderboards and counting (Realtime gaming data), PubSub and Messaging.
+        - Similar Service: ElastiCache
+        - Classification: DBaaS
+        - Costing: Cost factors include instance size (memory), data transfer, and backup storage.
+        - Cost Cutting: Optimize costs by selecting an appropriate instance size based on your data size and workload, using data persistence and backup options wisely, and optimizing your application's caching strategy.
+        - Where to Use and Where Not to Use: Use Cloud Memorystore for applications that require high-speed data caching and real-time data processing. It might not be suitable for applications with large datasets that cannot fit entirely in-memory.
+        - Deployment Options: Regional
+
+    SR Big Query:
+        - Cloud BigQuery is a fully managed, serverless, and highly scalable data warehouse and analytics platform provided by Google Cloud Platform (GCP). It enables you to analyze and query large datasets using SQL-like queries and supports batch and streaming data processing.
+        - Advantages: Scalable, Serverless Arch, SQLLikeQuery, Federated Queries, Integration
+        - Disadvantage: Expensive, Learning Curve
+        - Usecases: Cloud BigQuery is well-suited for data warehousing, ad-hoc analytics, business intelligence, and large-scale data processing.
+        - RL Usecases: Data WareHouse, Ad-Hoc Analysis, Log Analysis, market Analysis, Data Exploration
+        - Similar Service: redshift
+        - Classification: PaaS
+        - Cost: Cost factors include the amount of data processed during queries (query data usage), storage usage, and streaming data inserts.
+        - Cost Cutting: Optimize costs by managing data storage efficiently, using partitioned and clustered tables to reduce query costs, and optimizing SQL queries for performance.
+        - Where to Use and Where Not to Use: Use Cloud BigQuery for analyzing large datasets and performing complex queries for insights. It might not be suitable for small-scale, frequent, or transactional data access.
+        - Deployment Options: Regional
+
+    SN Big Table:
+        - Cloud Bigtable is a fully managed, scalable, NoSQL database service provided by Google Cloud Platform (GCP). It is designed for large analytical and operational workloads, offering high-performance, low-latency access to vast amounts of data.
+        - Advantages: Scalable, High Performance, Fully Managed, Wide Column Store, Integration with Dataflow, Dataproc, and BigQuery.
+        - Dis: Limited Query Capabilities, Data modeling Complexity
+        - USe Cases: Cloud Bigtable is suitable for applications that require high-performance and low-latency access to large-scale, semi-structured or structured data.
+        - RL UseCases: Ad Tech, Finance Service, Gaming
+        - Similar Service: DynamoDB
+        - Classification: DBaaS
+        - Costing: Cost factors include the number of nodes, storage usage, data transfer, and replication.
+        - Cost Cutting: Optimize costs by choosing appropriate node sizes based on workload requirements, managing data storage efficiently, and optimizing data modeling.
+        - Where to Use and Where Not to Use: Use Cloud Bigtable for applications that require real-time, high-throughput, and low-latency access to large datasets. It might not be suitable for applications that require complex ad-hoc querying or transactional consistency.
+        - Deployment Options: Regional
+
+
+
+
+
 
 Terms/Tools:
-    
+
+
+    Horizontal and vertical scaling: 
+        Horizontal scaling involves adding more machines or nodes to a system, while vertical scaling involves adding more power (CPU, RAM, storage, etc.) to an existing machine
     VMware-based workloads:
         Refer to software applications and services that are running on virtual machines (VMs) created and managed using VMware technology. These workloads utilize VMware's virtualization technology to create multiple isolated and independent virtual environments on a single physical server. This allows organizations to run multiple applications and operating systems on the same hardware, improving resource utilization and flexibility. VMware-based workloads can include various types of software, such as databases, web servers, applications, and more, all running within virtual machines created and managed by VMware tools and software.
     Blue Green Deployments:
