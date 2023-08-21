@@ -710,15 +710,39 @@ Individuals:
         - Where to Use and Where Not to Use: Use Dataproc when you need to process and analyze large datasets using distributed computing frameworks. It might not be suitable for smaller datasets or workloads that can be efficiently processed using single-node solutions.
         - Deployment Options: Dataproc allows you to create clusters in specific zones, and you can choose the zone based on latency and data residency requirements.
 
+    SN Data Prep:
+        - Dataprep is a data preparation and cleansing service provided by Google Cloud Platform (GCP). It helps users transform, clean, and structure their raw data into a usable format for analysis and reporting, making the data preparation process more efficient and less error-prone.
+        - advantages: Visual Interface, Data Transformation, Automated suggestions, Reproducibility, Integration
+        - Disadvantage: Complex, Can be Expensive
+        - Use Cases: Dataprep is ideal for data analysts, data engineers, and business users who need to prepare and clean data for analysis and reporting.
+        - RL Usecases: Data Cleaning, Data Transformation, Data Interation, Data Enrichment
+        - Similar Services: Trifacta is a similar data preparation tool that provides data cleaning and transformation capabilities.
+        - Classification: PaaS
+        - Cost Factors: Cost factors include the volume of data processed, the complexity of transformations, and the use of additional GCP services for data analysis.
+        - Cost Cutting factors: Optimize costs by using Dataprep efficiently, reducing unnecessary transformations, and utilizing the cleaned data for targeted analysis.
+        - Where to Use and Where Not to Use: Use Dataprep when you need to clean and transform data before analysis or reporting. It might not be necessary for small, well-structured datasets that require minimal cleaning.
+        - Deployment Options: Dataprep is a cloud-based service provided by GCP, and you can access and use it through a web browser.
 
-
+    SN Data Flow:
+        - Dataflow is a fully managed stream and batch data processing service provided by Google Cloud Platform (GCP). It enables you to build data pipelines for processing and transforming data in real time or in batch mode using Apache Beam, a unified programming model for both stream and batch processing.
+        - Advantage: Unified Model, Fully Managed, Flexible, Integration with GCP Services, Scalable
+        - Dis: Learning Curve, Can be Expensive
+        - UseCases: Dataflow is suitable for building data pipelines that process, transform, and analyze large volumes of data in real time or batch mode.
+        - RL Usecases: Real Time Analysis, ETL, Event Processing, Log Analysis, ML
+        - Similar Services: Amazon Kinesis Data Streams
+        - Classification: PaaS
+        - Cost Factors: Cost factors include the volume of data processed, the complexity of transformations, and the usage of compute resources.
+        - Cost-Cutting Factors: Optimize costs by designing efficient data pipelines, utilizing appropriate scaling settings, and using resources effectively.
+        - Where to Use and Where Not to Use: Use Dataflow when you need to process and analyze data in real time or batch mode and require a managed environment. It might not be necessary for simple data processing tasks that can be handled with more lightweight tools.
+        - Deployment Options: Region
 
 
 
 
 Terms/Tools:
 
-
+    ETL (Extract, Transform, Load):
+        Transforming and preparing data for loading into data warehouses, databases, or other storage systems.
     Horizontal and vertical scaling: 
         Horizontal scaling involves adding more machines or nodes to a system, while vertical scaling involves adding more power (CPU, RAM, storage, etc.) to an existing machine
     VMware-based workloads:
