@@ -808,12 +808,24 @@ Individuals:
         - Where to Use and Where Not to Use: Use Cloud Build when you want to automate your CI/CD process and achieve faster, more reliable software delivery. It may not be necessary for smaller projects or projects with simple deployment processes.
         - Deployment Options: Cloud Build can be configured to build and deploy applications to various environments, including Google Kubernetes Engine, App Engine, Compute Engine, and more.
 
+    SN Anthos Service Mesh:
+        - As of my last knowledge update in September 2021, Anthos Service Mesh was a service offered by Google Cloud Platform (GCP) as part of their Anthos platform. It's designed to manage, secure, and monitor microservices applications across different environments and clusters. Anthos Service Mesh is based on the open-source Istio project, which aims to simplify the management of microservices communication, enhance security, and provide observability.
+        - Key features of Anthos Service Mesh include:
+            - Traffic Management: It enables fine-grained control over how traffic is routed between different microservices. This includes features like traffic splitting, retries, timeouts, and circuit breakers.
+            - Security: Anthos Service Mesh enhances security by providing mTLS (mutual Transport Layer Security) authentication between microservices, ensuring encrypted communication and verification of service identity.
+            - Observability: The service mesh offers detailed insights into the communication between microservices, enabling you to monitor and troubleshoot your application. This includes features like distributed tracing, metrics collection, and logs aggregation.
+            - Policy Enforcement: You can define and enforce policies related to communication, access control, and traffic management across your microservices.
+            - Multi-Cluster Support: Anthos Service Mesh is designed to work across multiple Kubernetes clusters and even across hybrid and multi-cloud environments, allowing you to manage and secure microservices consistently across different locations.
+            - Vendor-Agnostic: While Anthos Service Mesh is part of Google Cloud's Anthos platform, it's not limited to GCP. It can be deployed on other Kubernetes clusters as well, whether they are hosted on-premises, in other cloud providers, or in hybrid environments.
     
+
 
 
 
 Terms/Tools:
 
+    BGP:
+        BGP, or Border Gateway Protocol, is like a map that helps different parts of the internet talk to each other. Imagine the internet as a big network of roads. BGP is the way that the different cities (networks) communicate and decide which roads (routes) to use to reach each other. It's important because it makes sure that data takes the right paths and doesn't get lost in the vast internet. BGP helps networks understand where to send data, kind of like GPS for the internet.
     ETL (Extract, Transform, Load):
         Transforming and preparing data for loading into data warehouses, databases, or other storage systems.
     Horizontal and vertical scaling: 
