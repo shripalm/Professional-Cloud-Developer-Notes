@@ -818,12 +818,261 @@ Individuals:
             - Multi-Cluster Support: Anthos Service Mesh is designed to work across multiple Kubernetes clusters and even across hybrid and multi-cloud environments, allowing you to manage and secure microservices consistently across different locations.
             - Vendor-Agnostic: While Anthos Service Mesh is part of Google Cloud's Anthos platform, it's not limited to GCP. It can be deployed on other Kubernetes clusters as well, whether they are hosted on-premises, in other cloud providers, or in hybrid environments.
     
+    SN Cloud Endpoint:
+        - Cloud Endpoints is a Google Cloud Platform (GCP) service that allows you to develop, deploy, manage, and secure APIs (Application Programming Interfaces). It enables you to create APIs that provide access to your backend services, making it easier for developers to interact with your applications programmatically. Cloud Endpoints provides features for API management, authentication, monitoring, and usage control.
+        - Deployment: Genarate API - Generate OAS Conf - Generate API Conf - Deploy it with gcloud - Secure and manage
+        - UseCases: Cloud Endpoints are suitable for scenarios where you want to expose your application's functionality to developers, partners, or third-party services through a well-defined and secure interface. Some use cases include:
+            - Exposing RESTful APIs for mobile applications.
+            - Creating public APIs for external developers to integrate with your services.
+            - Offering a consistent API interface to multiple internal microservices.
+        - Where Not to Use:
+            Cloud Endpoints might not be necessary for simple applications where you don't require extensive API management and authentication features. If you're building an application primarily for internal use, without the need for external integrations, Cloud Endpoints might be overkill.
+        - Limitation: Cost Effective, More time consuming, Learning Curve
+        - PaaS
+
+    SN APIgee:
+        - Apigee is a full-featured API management platform that enables organizations to design, deploy, and manage APIs (Application Programming Interfaces) in a scalable and secure manner. It's a product of Google Cloud and offers a comprehensive suite of tools for building and managing APIs, including API design, security, analytics, monitoring, and developer collaboration.
+        - Use Cases: Apigee is particularly useful when:
+            - You need a robust API management solution with features like security, analytics, and developer portals.
+            - You want to expose APIs to external developers, partners, or third-party applications.
+            - You need to control and manage access to your APIs, including rate limiting and authentication.
+        - Where Not to Use: Apigee might be unnecessary for simpler applications with minimal API needs. If you're building internal microservices that don't require extensive external integrations or complex API management, a lightweight solution might be more suitable.
+        - Limitations: Complex, Learning Curve, Cost
+        - Paas
+        - Types: 
+            - Edge: Core API Management platform. It includes features for API creation, security, traffic management, analytics, and developer engagement. Apigee Edge can be used for a wide range of API management scenarios.
+            - Platform: This includes Apigee Edge along with additional capabilities for extending your APIs with features like caching, transformations, traffic control, and security policies.
+            - Sense: Edge to provide protection against fraudulent and malicious API traffic.
+            - Monitoring: 
+            - Hybrid: Apigee Hybrid is designed for organizations that want to manage APIs both in a public cloud environment and on-premises infrastructure. It allows you to deploy parts of your API infrastructure in your data center while still using the Apigee cloud-based services for API management features.
+            - Extension: They allow you to enhance and customize your API management setup by adding features like authentication, transformation, and traffic control.
+
+    SN Monitoring:
+        - Google Cloud Monitoring helps you gain insights into your applications' behavior, resource usage, and overall performance. It enables you to collect metrics, set up alerting policies, and visualize data through dashboards. This tool is useful for both stateless and stateful applications to ensure they're running smoothly and meeting their performance objectives.
+        - Using Google Cloud Monitoring:
+            To use Google Cloud Monitoring, you generally follow these steps:
+            - Enable Monitoring: In your Google Cloud project, enable the Monitoring API to start collecting metrics.
+            - Configure Metrics Collection: Set up metric collection for your resources, applications, and services. Google Cloud Monitoring provides a wide range of metrics to monitor various aspects of your infrastructure.
+            - Create Dashboards: Design custom dashboards to visualize relevant metrics and performance indicators. Dashboards allow you to quickly assess the health and performance of your systems.
+            - Set Up Alerting Policies: Define alerting policies based on specific conditions or thresholds. These policies trigger notifications (via email, SMS, etc.) when predefined conditions are met.
+            - Analyze Logs and Traces: Google Cloud Monitoring can be integrated with Google Cloud Logging (formerly Stackdriver Logging) and Google Cloud Trace (formerly Stackdriver Trace) to provide additional insights into your applications' behavior and performance.
+        - Use Cases:
+            - Monitoring the performance of applications deployed on Google Cloud Platform.
+            - Tracking resource utilization, such as CPU, memory, and disk usage.
+            - Setting up alerts to respond quickly to performance or availability issues.
+        - Where Not to Use:
+            - Google Cloud Monitoring might not be necessary for smaller projects with minimal monitoring needs. If you're using other external monitoring tools that meet your requirements, Google Cloud Monitoring might be redundant.
+        - Limitations: 
+            - Complexity: Setting up and configuring monitoring can be complex for large systems with many components and metrics.
+            - Cost: Google Cloud Monitoring comes with a cost, especially for higher data ingestion and storage volumes.
+            - Metrics Retention: Be aware of the metric retention policy, as storing metrics for extended periods might lead to additional costs.
+
+    SN Logging:
+        - Google Cloud Logging, formerly known as "Stackdriver Logging," is a service that allows you to store, search, analyze, and monitor logs from your applications and infrastructure in Google Cloud Platform. It enables you to gain insights into the behavior of your systems, troubleshoot issues, and ensure compliance by collecting and analyzing logs from various sources.
+        - Using Google Cloud Logging:
+            To use Google Cloud Logging, you generally follow these steps:
+                - Enable Logging: In your Google Cloud project, enable the Logging API to start collecting logs.
+                - Configure Logging: Set up log collection from different sources, such as virtual machines, containers, applications, and other Google Cloud services.
+                - View Logs: Access the logs in the Google Cloud Console, where you can search, filter, and view logs from different resources.
+                - Create Log Exports: You can export logs to Google Cloud Storage, BigQuery, Pub/Sub, and other destinations for further analysis or archiving.
+                - Set Up Alerts: Use logs-based metrics to create alerting policies. When specific log entries match predefined patterns, alerts can be triggered.
+        - Use Cases:
+            - Monitoring application behavior and identifying issues through log analysis.
+            - Tracking security events, errors, and performance bottlenecks.
+            - Complying with auditing and regulatory requirements by retaining logs.
+        - Where Not to Use:
+            - Google Cloud Logging might not be necessary for projects with minimal logging needs. If you're using external logging solutions that meet your requirements, Google Cloud Logging might be redundant.
+        - Classification and Limitations:
+            - Google Cloud Logging falls under the category of Logging and Observability tools. Some limitations and considerations include:
+            - Data Retention: Be aware of the log retention policy, as storing logs for extended periods might lead to additional costs.
+            - Complexity: Setting up and configuring logging can be complex for systems with numerous components and log sources.
+            - Structured and Unstructured Logs: Google Cloud Logging supports both structured and unstructured logs, which can affect search and analysis capabilities.
+        - Configuration for Stateless and Stateful Applications:
+            - For stateless applications, you can configure Google Cloud Logging to capture logs from your application instances, containers, and other resources. You can then analyze these logs to identify performance bottlenecks, errors, and other issues.
+            - For stateful applications, you might also configure logging for database systems and other state-related components. Monitoring logs from databases can help you track queries, detect errors, and troubleshoot data-related problems.
+
+    SN Error Reporting: 
+        - Google Cloud Error Reporting is a service provided by Google Cloud Platform that helps you automatically detect, track, and analyze errors in your applications. It focuses on identifying and reporting errors and exceptions that occur during the execution of your code. By centralizing error information and providing insights, Google Cloud Error Reporting enables you to prioritize and address issues effectively, leading to improved application stability and user experience.
+        - Using Google Cloud Error Reporting:
+            - Enable Error Reporting: In your Google Cloud project, enable the Error Reporting API to start capturing and reporting errors.
+            - Integrate Error Reporting: Integrate the Error Reporting client library into your applications. This allows the client library to automatically capture and report errors to the Error Reporting service.
+            - View Error Reports: Access the Google Cloud Console to view error reports, including detailed information about the errors, their occurrences, and the associated context.
+            - Prioritize and Investigate: Analyze error reports to identify patterns, root causes, and impacts. Prioritize fixes and improvements based on the severity and frequency of errors.
+            - Integration with Other Services: Google Cloud Error Reporting can integrate with other Google Cloud services like Google Cloud Logging and Google Cloud Monitoring to provide a holistic view of your application's behavior and performance.
+        - Use Cases:
+            - Tracking and diagnosing errors and exceptions in your applications.
+            - Prioritizing bug fixes and improvements based on the impact of errors.
+            - Enhancing the overall quality and stability of your software.
+        - Where Not to Use:
+            - Google Cloud Error Reporting might not be necessary for very simple applications with minimal error-handling needs. If you have alternative error tracking and analysis mechanisms in place, using Google Cloud Error Reporting might be redundant.
+        - Classification and Limitations:
+            - Complexity: Setting up and configuring error reporting might require integration with your application code.
+            - Data Volume: Be aware of the volume of error reports generated, as excessive errors can lead to storage costs.
+            - Insightful Data: While error reports provide valuable information, some errors might require deeper investigation through additional logging and analysis.
+
+    SN Trace:
+        - Google Cloud Trace is a service provided by Google Cloud Platform that helps you collect, analyze, and visualize latency data for your applications. It focuses on understanding the performance of your applications by capturing trace data that shows how requests flow through your system and where delays occur. Google Cloud Trace is particularly useful for identifying bottlenecks, optimizing resource utilization, and improving user experience by reducing response times.
+        - Using Google Cloud Trace:
+            - Enable Trace: In your Google Cloud project, enable the Trace API to start capturing trace data.
+            - Instrument Code: Instrument your application code using the Trace client library or supported instrumentation libraries. This allows you to capture trace data for requests as they flow through your application.
+            - Capture Traces: As requests flow through your application, Google Cloud Trace captures timing information for different components and services involved in processing each request.
+            - View Trace Data: Access the Google Cloud Console to view trace data. You can visualize traces to identify latency hotspots, bottlenecks, and areas for optimization.
+            - Optimize Performance: Analyze trace data to identify performance issues, optimize resource allocation, and reduce response times.
+            - Integration with Other Services: Google Cloud Trace can integrate with other Google Cloud services like Google Cloud Logging and Google Cloud Monitoring to provide a comprehensive view of your application's behavior and performance.
+        - Use Cases:
+            - Google Cloud Trace is particularly useful when:
+            - Identifying performance bottlenecks and latency issues in your applications.
+            - Understanding how requests flow through different components of your system.
+            - Optimizing resource allocation and reducing response times.
+        - Where Not to Use: Google Cloud Trace might not be necessary for very simple applications with minimal latency and performance concerns. If you have alternative performance monitoring and optimization mechanisms in place, using Google Cloud Trace might be redundant.
+        - Classification and Limitations:
+            - Google Cloud Trace falls under the category of Application Performance Monitoring and Optimization tools. Some limitations and considerations include:
+            - Instrumentation Overhead: There might be some overhead involved in instrumenting your code for tracing, which could impact application performance to a minor extent.
+            - Data Volume: Be aware of the volume of trace data generated, as excessive traces can lead to storage costs.
+            - Granularity: Trace data provides insights into request flow and latency but might not capture every detail of your application's behavior.
+        - Configuration for Stateless and Stateful Applications:
+            - Both stateless and stateful applications can benefit from Google Cloud Trace. For stateless applications, you can trace requests as they navigate through different microservices. For stateful applications, you might also want to trace interactions with databases and other persistent storage systems to identify performance bottlenecks.
+
+    SN Profiler: 
+        - Google Cloud Profiler is a service provided by Google Cloud Platform that helps you understand the performance characteristics of your applications by capturing profiling data. Unlike metrics, which provide numerical measurements, profiling data gives you insights into how your code is behaving and where it spends time during execution. Google Cloud Profiler helps you identify performance bottlenecks, optimize code, and improve the overall efficiency of your applications.
+        - Using Google Cloud Profiler:
+            - Enable Profiler: In your Google Cloud project, enable the Profiler API to start capturing profiling data.
+            - Instrument Code: Instrument your application code using the Profiler client library or supported instrumentation libraries. This allows you to capture profiling data that reflects code execution behavior.
+            - Capture Profiling Data: As your application runs, Google Cloud Profiler captures information about where your code spends time, which functions are called, and how long they take to execute.
+            - View Profiling Data: Access the Google Cloud Console to view profiling data. You can analyze the data to identify performance bottlenecks and areas for optimization.
+            - Optimize Code: Analyze profiling data to identify areas of code that can be optimized to reduce execution time and resource consumption.
+            - Integration with Other Services: Google Cloud Profiler can integrate with other Google Cloud services like Google Cloud Logging and Google Cloud Monitoring to provide a comprehensive view of your application's behavior and performance.
+        - Use Cases:
+            - Identifying performance bottlenecks and areas for optimization in your applications.
+            - Understanding how code execution behavior impacts application performance.
+            - Improving application efficiency and resource utilization.
+        - Where Not to Use: Google Cloud Profiler might not be necessary for very simple applications with minimal performance concerns. If you have alternative profiling and optimization mechanisms in place, using Google Cloud Profiler might be redundant.
+        - Classification and Limitations:
+            - Instrumentation Overhead: Profiling instrumentation might introduce some overhead that could impact application performance to a minor extent.
+            - Data Volume: Be aware of the volume of profiling data generated, as excessive profiling data can lead to storage costs.
+            - Code Understanding: Profiling data provides insights into code execution behavior but might require additional analysis to understand the context and identify optimization opportunities.
+        - Configuration for Stateless and Stateful Applications: Both stateless and stateful applications can benefit from Google Cloud Profiler. For stateless applications, you can profile different components and functions to identify performance bottlenecks. For stateful applications, you might also profile interactions with databases and other state-related operations to optimize performance
+
+    - SN Debugger:
+        - Google Cloud Debugger is a service provided by Google Cloud Platform that allows you to inspect the state of your applications' code at runtime without stopping or interrupting their execution. It's particularly useful for diagnosing issues, understanding code behavior, and fixing problems without the need to reproduce them in a development environment.
+        - Using Google Cloud Debugger:
+            - Enable Debugger: In your Google Cloud project, enable the Debugger API to start using the debugging features.
+            - Instrument Code: Instrument your application code using the Debugger client library or supported instrumentation libraries. This allows you to capture snapshots of the code's state during runtime.
+            - Capture Snapshots: As your application runs, Google Cloud Debugger captures snapshots of your code's state at specific points, such as breakpoints or logpoints.
+            - View Snapshots: Access the Google Cloud Console to view captured snapshots. You can examine variables, call stacks, and other information to understand the state of your application at specific points in time.
+            - Debug and Troubleshoot: Use the captured snapshots to identify issues, diagnose problems, and understand the behavior of your code.
+            - Integration with Other Services: Google Cloud Debugger can integrate with other Google Cloud services like Google Cloud Logging to provide additional context when debugging.
+        - Use Cases:
+            - Diagnosing issues that are hard to reproduce in a development environment.
+            - Understanding code behavior and variables at specific points during execution.
+            - Fixing problems in a live environment without stopping the application.
+        - Where Not to Use: Google Cloud Debugger might not be necessary for simpler applications with minimal debugging needs. If you can effectively debug your application using traditional development tools and environments, using Google Cloud Debugger might be unnecessary.
+        - Classification and Limitations:
+            - Instrumentation Overhead: Debugging instrumentation might introduce minor overhead that could impact application performance.
+            - Snapshot Scope: Snapshots provide insights into code behavior at specific points but might not capture every detail of the application's runtime state.
+            - Use with Caution: While Google Cloud Debugger is powerful, debugging in a live environment requires caution to avoid unintended impacts on production systems.
+        - Configuration for Stateless and Stateful Applications: Both stateless and stateful applications can benefit from Google Cloud Debugger. For stateless applications, you can capture snapshots at specific points to understand behavior. For stateful applications, you might also capture snapshots during interactions with databases or other state-related operations to troubleshoot problems.
+
+    - SN Opentelemetry: 
+        - OpenTelemetry is an open-source project that provides a set of APIs, libraries, agents, and instrumentation to enable observability and monitoring in applications. It helps you collect and export telemetry data, including traces (request flow) and metrics (performance data), from your applications and services. OpenTelemetry allows you to gain insights into the behavior, performance, and bottlenecks of your systems.
+        - Using OpenTelemetry:
+            - Instrumentation: Instrument your application code using the OpenTelemetry APIs or libraries. This involves adding code to capture traces and metrics at different points in your application.
+            - Configuration: Configure OpenTelemetry to export the collected telemetry data to the desired backend, such as observability platforms like Google Cloud Monitoring, Stackdriver Trace, or third-party solutions.
+            - Capture Traces: OpenTelemetry captures trace data that shows how requests flow through your application. This helps you understand bottlenecks and latency issues.
+            - Capture Metrics: OpenTelemetry captures metrics related to resource usage, performance, and more. This helps you track trends and optimize your application.
+            - Export Data: Configure OpenTelemetry to export the captured telemetry data to the observability backend of your choice.
+        - Use Cases:
+            - Understanding request flow and performance bottlenecks in distributed applications.
+            - Capturing metrics for resource utilization and performance optimization.
+            - Enabling observability in microservices architectures.
+        - Where Not to Use: OpenTelemetry might not be necessary for very simple applications with minimal observability needs. If you have alternative monitoring and observability mechanisms in place, using OpenTelemetry might be redundant.
+        - Implementation in GCP:
+            - Google Cloud Functions: Instrument your Cloud Functions code using OpenTelemetry libraries to capture traces and metrics related to function execution.
+            - Google Kubernetes Engine (GKE): Install OpenTelemetry agents in your Kubernetes pods to capture traces and metrics for your microservices.
+            - Compute Engine: Instrument your Compute Engine instances using OpenTelemetry to capture traces and metrics.
+            - App Engine: Integrate OpenTelemetry libraries in your App Engine applications to capture traces and metrics for requests.
+            - Google Cloud Run: Instrument your containers running on Cloud Run using OpenTelemetry to capture traces and metrics.
+        - Limitations and Considerations:
+            - Instrumentation Effort: Implementing OpenTelemetry requires adding instrumentation code to your applications, which might add complexity to development.
+            - Overhead: OpenTelemetry instrumentation might introduce some overhead to your applications, impacting performance to a minor extent.
+            - Data Volume and Costs: Be aware of the volume of telemetry data generated and exported, as it can lead to storage and data transfer costs.
+
+    - SN Grafana: 
+        - Grafana is an open-source platform for monitoring and observability, known for its powerful visualization and dashboarding capabilities. It allows you to create interactive and customizable dashboards that display metrics, logs, and other observability data from various sources. Grafana is often used in combination with data sources like Google Cloud Monitoring, Prometheus, Elasticsearch, and more to provide a unified view of the health and performance of your applications and infrastructure.
+        - Using Grafana:
+            - Install Grafana: Set up and install Grafana on your preferred infrastructure, such as a virtual machine, container, or cloud service.
+            - Configure Data Sources: Connect Grafana to data sources that provide observability data. For Google Cloud, you can configure Google Cloud Monitoring as a data source.
+            - Create Dashboards: Design interactive dashboards using Grafana's intuitive user interface. Add panels to visualize metrics, logs, and other data.
+            - Query Data: Use Grafana's query language to retrieve and display data from your data sources. Customize visualizations and layouts as needed.
+            - Alerting: Set up alerting rules to receive notifications when certain conditions or thresholds are met, helping you respond quickly to issues.
+            - Share Dashboards: Share your Grafana dashboards with team members, stakeholders, or anyone who needs access to the observability data.
+        - Use Cases:
+            - Visualizing and analyzing complex monitoring and observability data.
+            - Creating centralized dashboards for various metrics and logs from different sources.
+            - Collaborating on observability insights within teams.
+        - Where Not to Use: Grafana might not be necessary for simpler applications with minimal monitoring needs and basic visualization requirements. If you're looking for a lightweight solution, other simpler dashboards or tools might be more suitable.
+        - Implementation in GCP Services:
+            - Google Cloud Monitoring: Configure Google Cloud Monitoring as a data source in Grafana to visualize metrics and create dashboards based on the metrics collected from Google Cloud resources.
+            - Google Kubernetes Engine (GKE): Set up Grafana to visualize metrics collected from GKE clusters using Google Cloud Monitoring or Prometheus as a data source.
+            - Prometheus on GKE: Deploy Prometheus on GKE to collect metrics from applications, and then connect Grafana to Prometheus as a data source.
+            - Elasticsearch on GCP: If using Elasticsearch on Google Cloud, you can use Grafana to visualize logs and metrics collected by Elasticsearch.
+        - Limitations and Considerations:
+            - Setup Complexity: Setting up and configuring Grafana might require some technical expertise, especially when connecting to various data sources.
+            - Resource Consumption: Grafana consumes resources, so be mindful of resource allocation when deploying it.
+            - Data Source Configuration: Configuring data sources correctly is crucial for accurate visualization, so ensure proper configuration.
+
+    - SN Prometheus: 
+        - Prometheus is an open-source monitoring and alerting toolkit designed for collecting and storing time-series data. It's widely used for monitoring applications and infrastructure, and it's known for its scalability, reliability, and flexibility. Prometheus allows you to collect metrics from various sources, store them, and query the data for visualization, alerting, and analysis.
+        - Using Prometheus:
+            - Deploy Prometheus: Set up and deploy Prometheus on your preferred infrastructure, such as a virtual machine, container, or cloud service.
+            - Instrument Code: Instrument your applications and services using Prometheus client libraries or integrations. This involves exposing metrics that Prometheus can scrape.
+            - Scrape Metrics: Prometheus uses a pull model to scrape metrics from endpoints exposed by applications and services. Configure Prometheus to scrape these endpoints at specified intervals.
+            - Store Data: Prometheus stores the collected metrics in its time-series database. Metrics are stored with labels that allow for flexible querying.
+            - Query and Visualization: Use Prometheus's query language, PromQL, to retrieve and aggregate metrics. Visualize metrics using tools like Grafana or Prometheus's own built-in visualization components.
+            - Alerting: Set up alerting rules in Prometheus to receive notifications when certain conditions or thresholds are met, helping you respond to issues proactively.
+        - Use Cases:
+            - Monitoring the performance and health of applications and infrastructure.
+            - Collecting and analyzing time-series data to understand trends and anomalies.
+            - Setting up alerting to detect and respond to issues quickly.
+        - Where Not to Use: Prometheus might not be suitable for organizations that require advanced machine learning-based anomaly detection or support for long-term data storage. In such cases, additional tools or solutions might be necessary.
+        - Implementation in GCP Services:
+            - Google Kubernetes Engine (GKE): Set up Prometheus in GKE to collect metrics from containers and pods. Use Prometheus Operator for simplified management.
+            - Compute Engine: Deploy Prometheus on Compute Engine instances to monitor applications running on VMs.
+            - Prometheus on Cloud Run: Although not natively supported due to the serverless nature of Cloud Run, you can use other monitoring tools to collect metrics from Cloud Run services.
+            - Hybrid Setup: Deploy Prometheus both on-premises and in the cloud to monitor hybrid environments.
+        - Limitations and Considerations:
+            - Scalability: Ensure that Prometheus is properly scaled to handle the volume of scraped metrics without overloading resources.
+            - Resource Consumption: Prometheus consumes resources for storing and querying metrics, so allocate resources accordingly.
+            - Retention Policy: Prometheus retains metrics for a specific time period. Consider integrating with long-term storage solutions for extended retention.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 Terms/Tools:
 
+    How can we make a group of GCE instances scale automatically?:
+        A group of self-managed instances allows us to have an instance template that, based on the behavior of some defined consumption metric, can grow by creating new instances or decrease by eliminating previously created instances.
     BGP:
         BGP, or Border Gateway Protocol, is like a map that helps different parts of the internet talk to each other. Imagine the internet as a big network of roads. BGP is the way that the different cities (networks) communicate and decide which roads (routes) to use to reach each other. It's important because it makes sure that data takes the right paths and doesn't get lost in the vast internet. BGP helps networks understand where to send data, kind of like GPS for the internet.
     ETL (Extract, Transform, Load):
@@ -854,4 +1103,5 @@ Terms/Tools:
         The topmost layer of a container image represents the final state of the filesystem, including the application code and runtime environment, and is the starting point for running a container.
     Control Planes:
         Controller of cluster.
-
+    Cloud Trace and Cloud Profiler: 
+        Cloud Trace provides latency sampling and reporting for App Engine, including per-URL statistics and latency distributions. Cloud Profiler provides continuous profiling of resource consumption in your production applications, helping you identify and eliminate potential performance issues.
