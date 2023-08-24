@@ -1045,32 +1045,32 @@ Individuals:
             - Resource Consumption: Prometheus consumes resources for storing and querying metrics, so allocate resources accordingly.
             - Retention Policy: Prometheus retains metrics for a specific time period. Consider integrating with long-term storage solutions for extended retention.
 
+    - Migration Services:
+        - Database Migration Service: This service helps you migrate your databases to GCP with minimal downtime. It supports various source databases, including MySQL, PostgreSQL, and SQL Server.
+        - VM Migration: Google Cloud offers tools and services to migrate your existing virtual machines (VMs) from on-premises or other cloud providers to Google Compute Engine. Some tools include Migrate for Compute Engine and Velostrata.
+        - Application Migration: GCP provides services to help you modernize and migrate your applications. Tools like Anthos can assist in building and managing containerized applications and microservices.
+        - Transfer Appliance: If you have a large amount of data that you want to move to GCP, the Transfer Appliance allows you to physically ship your data on a storage device to Google, which is then uploaded to your GCP storage.
+        - Data Transfer Service: This service helps you move data from various sources, such as Amazon S3, into GCP storage services like Cloud Storage.
+        - BigQuery Data Transfer Service: It allows you to automate the movement of data from SaaS applications, such as Google Analytics and Salesforce, to BigQuery for analysis.
+        - Cloud Storage Transfer Service: This service helps you transfer data between on-premises storage and GCP's Cloud Storage, or between different Cloud Storage buckets.
+        - Content Delivery Network (CDN) Interconnect: While not a migration service per se, this helps optimize content delivery by integrating on-premises or data center CDN deployments with Google's global edge network.
+        - Filestore: If you need to migrate your file-based workloads to the cloud, Filestore provides a managed file storage service that's compatible with applications running on the traditional Network File System (NFS) protocol.
+        - Dataproc Migration: Google Dataproc is a managed Apache Spark and Apache Hadoop service. If you're using these technologies on-premises or elsewhere, you can migrate your workloads to Dataproc on GCP.
+        - Anthos: While primarily focused on application modernization, Anthos also supports migrating applications across environments, including on-premises to GCP.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    - SN Anthos: 
+        - Platform to manage apps ins hybrid cloud environment
+        - Anthos Stack: Build, Deploy, Deliver, Manage
+            - GKE On premesis
+        - Anthos Config Management Plane Handles Google CLoud and On prem or other cloud, in short multi cloud, and manages those. 
+        - Comes with GCP MarketPlace
 
 
 
 Terms/Tools:
 
+    ISTIO:
+        Istio is an open-source service mesh platform designed to enhance the observability, security, and control of microservices-based applications. It provides tools for managing traffic, enforcing policies, and monitoring service interactions within complex architectures. Istio abstracts away many network-level complexities, allowing developers to focus on application logic while improving resilience and optimizing communication between services. With features like load balancing, circuit breaking, and distributed tracing, Istio simplifies the deployment and management of microservices in dynamic and containerized environments.
     How can we make a group of GCE instances scale automatically?:
         A group of self-managed instances allows us to have an instance template that, based on the behavior of some defined consumption metric, can grow by creating new instances or decrease by eliminating previously created instances.
     BGP:
