@@ -1,0 +1,317 @@
+Binary Authorization is a deploy-time security control that ensures only container images that are verified can be deployed on GKE. It can help enforce only trusted images are deployed.
+
+
+
+Gremlin is a failure-as-a-service platform that can help simulate regional failures in a controlled manner, allowing for effective failure testing. Monitoring the application's behavior with Cloud Monitoring will provide insights into how it reacts and recovers.
+
+
+
+One trade-off of using a PaaS solution like GAE is that you have less control over the runtime environment. This can slow down the velocity if your application requires specific configuration or dependencies that are not provided by the PaaS platform.
+
+
+
+The Google Cloud SDK is a set of tools that you can use to manage resources and applications hosted on Google Cloud. It includes command-line tools (gcloud, gsutil, and bq) which help in authenticating and interacting with Google Cloud services from the local machine.
+
+
+
+The Google Cloud Console is a web interface and does not help with setting up a local development environment.
+
+
+
+The Google Cloud Operations Suite (formerly Stackdriver) is used for logging, monitoring, and application performance management, but it doesn't help with local machine authentication to Google Cloud services.
+
+
+
+Deploying GKE in a regional cluster and using regional Cloud SQL provides the highest availability, with automatic replication and failover across zones within the region.
+
+
+
+Checking Cloud Logging for error messages should be the first step in troubleshooting application issues. It's the quickest way to see if the application is encountering errors that could be causing the latency.
+
+
+
+While GKE manages the underlying Kubernetes infrastructure, there is still overhead in managing the container orchestration platform. This includes managing deployments, services, and maintaining the overall health of the Kubernetes environment, which could slow down the velocity of feature deployment.
+
+
+
+Cloud Spanner provides global transaction consistency and strong read-after-write consistency, making it ideal for applications where strong consistency is required.
+
+
+
+PersistentVolumeClaim with ReadWriteOnce access mode allows the volume to be mounted as read-write by a single node. It's suitable for stateful applications that require persistent storage.
+
+
+
+EmptyDir volumes are ephemeral and are tied to the pod's lifecycle. If the pod gets deleted, data in the EmptyDir is lost, so it's not suitable for persistent storage.
+
+
+
+PersistentVolume with ReadWriteMany access mode can be mounted as read-write by many nodes, but it's not supported by GCE Persistent Disk.
+
+
+
+PersistentVolumeClaim with ReadOnlyMany access mode can be mounted as read-only by many nodes. It's not suitable for stateful applications that need to write to the disk.
+
+
+
+Workload Identity is the recommended way to access Google Cloud services from applications running within GKE. It allows you to bind Kubernetes service accounts to Google Cloud service accounts.
+
+
+
+Kubernetes Secrets can be used to store sensitive data like passwords, OAuth tokens, and SSH keys, but they cannot link Kubernetes service accounts to Google Cloud service accounts.
+
+
+
+By maintaining both the old and new database schemas and using an abstraction layer, the application can remain compatible with both versions during the transition period.
+
+
+
+Exponential backoff is a standard error-handling strategy for network applications in which the client periodically retries a failed request over an increasing amount of time.
+
+
+
+A normalized schema helps avoid redundancy, and interleaved tables in Cloud Spanner can help group related data together, improving the performance of operations that involve data locality.
+
+
+
+App Engine Standard Environment provides a fully managed serverless platform. It supports automatic scaling, and you only pay for the resources you use, making it the best choice for this scenario.
+
+
+
+Using a CaaS platform often introduces an additional layer of complexity in terms of container orchestration. Although many tasks are automated, the team still has to spend time managing and configuring the orchestration of those containers, which can slow down the development velocity.
+
+
+
+Cloud Build provides a caching option, which stores Docker layers from previous builds. Enabling this can decrease the time to download dependencies that have not changed since the last build, making this the correct answer.
+
+
+
+Cloud Logging's log viewer allows real-time viewing of logs. You can set up filters to focus on error messages or other patterns in your logs that might help in identifying the issue.
+
+
+
+gcloud init: It initializes or reinitializes gcloud configuration. It performs several tasks such as authorizing gcloud and gsutil, setting the default project, and setting the default compute region and zone.
+
+
+
+If you're spending a lot of time managing infrastructure – such as maintaining servers, managing security, or performing updates – this could slow down the velocity of feature releases. This is a common tradeoff when using IaaS instead of PaaS or SaaS, as the latter two abstract away much of the infrastructure management responsibilities.
+
+
+
+API Gateway can handle the authentication and monitoring of your APIs, while App Engine can automatically scale based on the load.
+
+
+
+The gcloud auth set-account command is used to change the active account that your local Google Cloud SDK installation is using for authentication.
+
+
+
+The gcloud config set command is used to change configuration settings, but the correct command to change the active account is gcloud auth set-account. 
+
+
+
+With IAM, you can control who (which users) has what access (roles) to which resources by setting IAM policies at different levels in the resource hierarchy
+
+
+
+Cloud Build is a service that executes your builds on Google Cloud's infrastructure. It can automate the build, testing, and deployment of applications, making it suitable for setting up continuous delivery.
+
+
+
+Hashing keys before using them can help distribute writes across all nodes evenly, avoiding hotspotting and improving write performance.
+
+
+
+Pub/Sub is a global, real-time messaging service that allows sending and receiving messages between independent applications. It enables asynchronous communication
+
+
+
+The ADC strategy is the recommended way to provide service authentication in Google Cloud, as it allows the infrastructure to automatically manage the service account keys. In Cloud Functions, ADC uses the default service account of the function, so this strategy provides a secure and easy way to authenticate API calls.
+
+
+
+Enabling the Vision API allows it to be used in your project, but it does not provide authentication for services that call the API.
+
+
+
+App Engine Flexible can support applications with persistent connections and is considered a serverless environment as it abstracts away infrastructure management.
+
+
+
+The roles/pubsub.publisher role gives users the ability to manage Pub/Sub topics but not subscriptions, fitting the requirements.
+
+
+
+The roles/pubsub.editor role allows users to both manage Pub/Sub topics and subscriptions, which is more permissions than required.
+
+
+
+The roles/pubsub.admin role provides full access to Pub/Sub resources, including both topics and subscriptions.
+
+
+
+The roles/pubsub.subscriber role allows users to consume messages from a subscription and does not provide any permissions on topics.
+
+
+
+Kubernetes Network Policies allow developers to specify how a pod communicates with various network "entities" (endpoints) over the network. This is the correct choice for controlling traffic at the pod level.
+
+
+
+Istio Service Mesh is great for controlling traffic flow between services, but for controlling traffic at the pod level within Kubernetes, Kubernetes Network Policies is a better fit.
+
+
+
+gcloud config configurations: It is used to manage multiple sets of configurations. Each configuration holds a set of settings, such as the project to use, the active account, and the region or zone for compute commands. This would enable team members to switch between different projects and compute zones.
+
+
+
+gcloud auth login: It is used to authenticate with Google Cloud, not to manage configurations.
+
+
+
+gcloud projects list: It lists all the available projects, but it does not help in managing different configurations.
+
+
+
+gcloud components install: It is used to install additional gcloud components, not for managing configurations.
+
+
+
+Private Google Access allows GKE nodes to connect to Google services like Cloud SQL using a private IP address, keeping all traffic within the Google network.
+
+
+
+Cloud VPN connects your on-premises network to your Google Cloud VPC network through an IPsec VPN connection, but it's not necessary for communication within the Google network.
+
+
+
+docker push: It is the correct command to push a Docker image to a Docker registry, including Google Artifact Registry. You must include the complete hostname of the Artifact Registry repository in the tag of your Docker image.
+
+
+
+Traffic Director is a Google Cloud service for traffic control and configuration for service mesh. It provides global traffic management, allowing you to easily manage and control inter-service communication, making it the correct answer for this scenario.
+
+
+
+For Cloud Logging to receive logs from a Compute Engine instance, the Cloud Logging agent must be installed and running on that instance.
+
+
+
+A sink is used to route logs to various destinations such as Cloud Storage, BigQuery, or Pub/Sub. It's not necessary for collecting logs.
+
+
+
+Cloud Run is a fully managed serverless platform that automatically scales stateless containers and allows microservices to communicate with each other over HTTP.
+
+
+
+MinIO is a high performance, Kubernetes-native object storage suite, and can be used to emulate Google Cloud Storage in a local development environment.
+
+
+
+Each Compute Engine instance has a default service account that can be used to run your applications. You can assign roles to the service account to give it the necessary permissions to access Google Cloud services. This is the most secure and recommended way to provide your applications with the necessary permissions.
+
+
+
+The primary advantage of using Docker containers for build steps is to provide a consistent environment for each step, regardless of where the build is run, thus ensuring reproducibility of builds.
+
+
+
+Using the Cloud Spanner client libraries in your application running on GKE provides a direct, low-latency connection to Cloud Spanner. The client libraries handle communication with the Cloud Spanner API, which helps to optimize performance.
+
+
+
+Kubernetes Network Policies allow network isolation within a GKE cluster, but they don't provide the enhanced observability (e.g., telemetry, tracing) between pods. Istio service mesh does.
+
+
+
+Using keys with a random prefix can distribute writes across multiple splits, thereby improving write performance.
+
+
+
+Cloud Bigtable is ideal for storing large amounts of single-keyed data with low latency. It supports high read and write throughput at low latency
+
+
+
+Cloud Data Loss Prevention (DLP) is the perfect and ready to use solution; it uses information types—or infoTypes—to define what it scans for. An infoType is a type of sensitive data, such as name, email address, telephone number, identification number, or credit card number.
+
+
+
+TEMPORARY TABLE’ lasts just for the execution time of the procedure, not for days.
+
+
+
+Packer is used to create a VM image for use on Google Compute Engine. Packer is a tool to automate the creation of any type of machine image.
+
+
+
+Spinnaker does indeed automate the software delivery and deployment process which makes it a perfect fit for a CI/CD pipeline.
+
+
+
+Spinnaker provides Automated Canary Analysis (ACA), which helps in reducing the risk of introducing a new software version in production by gradually shifting traffic to the new version while measuring performance.
+
+
+
+One of the key features of Spinnaker is its ability to manage application lifecycles across different cloud providers including Google Cloud, AWS, and Azure.
+
+
+
+Apigee is an API management platform that includes a developer portal feature. By combining Cloud Endpoints with Apigee, you can implement an API strategy that includes a developer portal.
+
+
+
+By using Google Cloud DNS, you can map a domain name to the Cloud Function URL. This way, your application can use the domain name instead of the hardcoded URL, making it easier to manage if the URL of the Cloud Function changes.
+
+
+
+Application Default Credentials automatically refresh and do not require user interaction
+
+
+
+Firebase Realtime Database is a cloud-hosted NoSQL database that helps you store and sync data between your users in real-time, making it a good option for managing user sessions in web applications.
+
+
+
+Cloud Storage - Nearline Storage class is designed for data that can be stored for at least 30 days, including data backup and long-tail multimedia content. It's a cost-effective solution for data that is accessed less than once a month.
+
+
+
+Google Cloud Client Libraries, such as the one for Python, provide idiomatic, efficient, and easy-to-use client libraries for various Google Cloud services, including Cloud Storage. They are the best option for most application development.
+
+
+
+Kubernetes automatically provides a DNS service for service discovery, where each service in the Kubernetes cluster has a corresponding DNS name. Pods can use these service DNS names to communicate with each other, providing a flexible, scalable, and robust method for service discovery.
+
+
+
+Cloud Firestore doesn't natively support full-text search. However, it can be integrated with third-party search services like Algolia to provide full-text search capabilities, which would be a suitable solution for implementing this feature in a high-performing application.
+
+
+
+Using a Chaos Engineering tool like Chaos Monkey or LitmusChaos, you can introduce controlled failures in your system and observe how it behaves.
+
+
+
+Using Application Default Credentials (ADC) is recommended because it automatically takes into account both the environment your code is running in and the service accounts you've assigned to the resource from where the code is running.
+
+
+
+Cloud Spanner is a globally-distributed, strongly consistent relational database service that's designed for mission-critical OLTP applications and offers high availability and reliability.
+
+
+
+For Cloud Profiler to profile your application, you need to include the Profiler agent in your application's deployment.
+
+
+
+The Profiler API is automatically enabled when you enable the Cloud Profiler.
+
+
+
+Cloud Firestore is a highly scalable, high-availability, and fully managed NoSQL database suitable for web, mobile, and server development. It's well-suited for storing and syncing user session data across a globally distributed application.
+
+
+
+Rolling updates are the ideal choice in this scenario. They allow you to update your application with zero downtime by incrementally updating Pods instances with new ones. The old ReplicaSets are reduced while new ReplicaSets are increased, ensuring only one instance is updated at a time.
